@@ -1,4 +1,4 @@
-# Module 1: Basic Python
+# Module 1: Basic Python (Part I)
 
 This notebook reviews the fundamentals of python. Follow along in your own blank jupyter notebook or click on the "Live Code/Launch Thebe" button in the upper right corner.
 
