@@ -232,10 +232,12 @@
 <div class="tip admonition">
 <p class="admonition-title">Question 1</p>
 <p>How do you print “hi” to screen in Python 3?</p>
-<p>(a) print(hi)
-(b) print “hi”
-(c) print(“hi”)
-(d) print hi</p>
+<ul class="simple">
+<li><p>(a) print(hi)</p></li>
+<li><p>(b) print “hi”</p></li>
+<li><p>(c) print(“hi”)</p></li>
+<li><p>(d) print hi</p></li>
+</ul>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -252,18 +254,22 @@
 <div class="tip admonition">
 <p class="admonition-title">Question 2</p>
 <p>Which one of the following expression will result in a “division by zero” error?</p>
-<p>(a) 61 / ((-8 + 2) * 4) ** 2
-(b) 61 // ((-8 + 2) * 4) ** 2
-(c) 61 // (-8 + 2 * 4) ** 2
-(d) 61 // ((-8 + 2) * 4) * 2</p>
+<ul class="simple">
+<li><p>(a) 61 / ((-8 + 2) * 4) ** 2</p></li>
+<li><p>(b) 61 // ((-8 + 2) * 4) ** 2</p></li>
+<li><p>(c) 61 // (-8 + 2 * 4) ** 2</p></li>
+<li><p>(d) 61 // ((-8 + 2) * 4) * 2</p></li>
+</ul>
 </div>
 <div class="tip admonition">
 <p class="admonition-title">Question 3</p>
 <p>What is the correct way to print “my age is ” + age? Assume age is an integer.</p>
-<p>(a) print(“my age is”, age)
-(b) print(“my age is” + age)
-(c) print(“my age is” + str(age))
-(d) print(“my age is” + age.toString())</p>
+<ul class="simple">
+<li><p>(a) print(“my age is”, age)</p></li>
+<li><p>(b) print(“my age is” + age)</p></li>
+<li><p>(c) print(“my age is” + str(age))</p></li>
+<li><p>(d) print(“my age is” + age.toString())</p></li>
+</ul>
 </div>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
@@ -282,8 +288,10 @@
 <p class="admonition-title">Question 4</p>
 <p>Is following expression True or False? Hint: break the question down into smaller parts.</p>
 <p><code class="docutils literal notranslate"><span class="pre">(&quot;False&quot;</span> <span class="pre">and</span> <span class="pre">True)</span> <span class="pre">or</span> <span class="pre">(False</span> <span class="pre">or</span> <span class="pre">0</span> <span class="pre">or</span> <span class="pre">-1)</span></code></p>
-<p>(a) True
-(b) False</p>
+<ul class="simple">
+<li><p>(a) True</p></li>
+<li><p>(b) False</p></li>
+</ul>
 </div>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -293,6 +301,108 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Question 5</p>
+<p>What is the value of x after the code execution completes?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> 
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>(a) 5</p></li>
+<li><p>(b) 4</p></li>
+<li><p>(c) 3</p></li>
+<li><p>(d) 2</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">b</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> 
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="tip admonition">
+<p class="admonition-title">Question 6</p>
+<p>What is the value of x after the code execution completes?</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> 
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+<ul class="simple">
+<li><p>(a) 5</p></li>
+<li><p>(b) 4</p></li>
+<li><p>(c) 3</p></li>
+<li><p>(d) 2</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">a</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">5</span> 
+    <span class="k">elif</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">4</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">3</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="mi">2</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
