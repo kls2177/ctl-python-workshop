@@ -1,0 +1,1520 @@
+
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>NumPy / Matplotlib &#8212; Basic and Intermediate Python</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
+    <link href="../../_static/css/index.css" rel="stylesheet">
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/mystnb.js"></script>
+    <script src="../../_static/sphinx-book-theme.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="canonical" href="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/01_intermediate_python.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="Introduction" href="intermediate_intro.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="docsearch:language" content="en">
+
+
+<!-- Opengraph tags -->
+<meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/01_intermediate_python.html" />
+<meta property="og:type"        content="article" />
+<meta property="og:title"       content="NumPy / Matplotlib" />
+<meta property="og:description" content="NumPy / Matplotlib  Last Session  To open a Python interpreter, type python in terminal.  Arithmetic operations:  + Plus  - Minus  * Multiply  / Divide  ** Powe" />
+<meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
+
+<meta name="twitter:card" content="summary" />
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="../../index.html">
+  
+  <img src="../../_static/python-logo-master-v3-TM.png" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Basic and Intermediate Python</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../index.html">
+   Basic and Intermediate Python
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/intro.html">
+   Introduction
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../basic/beginner_intro.html">
+   Basic Python
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="reference internal" href="intermediate_intro.html">
+   Introduction
+  </a>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     NumPy / Matplotlib
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/chapters/intermediate/01_intermediate_python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kls2177/ctl-python-workshop/master?urlpath=tree/chapters/intermediate/01_intermediate_python.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> On this page
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#last-session">
+   Last Session
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#numpy">
+   NumPy
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ndarray">
+     NDArray
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#data-types">
+       Data Types
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#shape">
+       Shape
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#array-creation">
+       Array Creation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#indexing">
+       Indexing
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#array-operations">
+       Array Operations
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#broadcasting">
+       Broadcasting
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#break">
+   Break
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#matplotlib">
+   Matplotlib
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#real-data">
+   Real Data
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#more-plots">
+     More Plots
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plotting-resources">
+   Plotting Resources
+  </a>
+ </li>
+</ul>
+
+        </nav>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="numpy-matplotlib">
+<h1>NumPy / Matplotlib<a class="headerlink" href="#numpy-matplotlib" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="last-session">
+<h2>Last Session<a class="headerlink" href="#last-session" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>To open a Python interpreter, type <code class="docutils literal notranslate"><span class="pre">python</span></code> in terminal.</p></li>
+<li><p>Arithmetic operations:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Plus</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> Minus</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">*</span></code> Multiply</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">/</span></code> Divide</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> Power</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//</span></code> Divide and floor</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%</span></code> Mod</p></li>
+</ul>
+</li>
+<li><p>Conditionals</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">if(expression)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">elif</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">else</span></code></p></li>
+</ul>
+</li>
+<li><p>Loops</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">while(expression)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">for</span></code></p></li>
+</ul>
+</li>
+<li><p>Some types are not compatible with each other.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">1+</span> <span class="pre">&quot;123&quot;</span></code> is invalid.</p></li>
+</ul>
+</li>
+<li><p>To declare an array</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span> <span class="pre">=</span> <span class="pre">[1,2,3]</span></code></p></li>
+</ul>
+</li>
+<li><p>To declare a dictionary</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">d</span> <span class="pre">=</span> <span class="pre">{&quot;name&quot;:</span> <span class="pre">&quot;Student&quot;}</span></code></p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="numpy">
+<h2>NumPy<a class="headerlink" href="#numpy" title="Permalink to this headline">¶</a></h2>
+<p>NumPy is a Python package that provides more functionalities to vanilla Python.
+It is mainly used for scientific computing.</p>
+<p>Imagine you want to multiply <code class="docutils literal notranslate"><span class="pre">[1,3,4]</span></code> and <code class="docutils literal notranslate"><span class="pre">[5,6,7]</span></code> element by element.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">b</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">3</span><span class="p">):</span>
+    <span class="n">result</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">*</span> <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[4, 10, 18]
+</pre></div>
+</div>
+</div>
+</div>
+<p>It is much easier to use NumPy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">])</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[ 4 10 18]
+</pre></div>
+</div>
+</div>
+</div>
+<p>To use NumPy, we first need to import it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&#39;1.16.2&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><em>Side note:</em> You can check the numpy version using <code class="docutils literal notranslate"><span class="pre">np.__version__</span></code>:</p>
+</div></blockquote>
+<div class="section" id="ndarray">
+<h3>NDArray<a class="headerlink" href="#ndarray" title="Permalink to this headline">¶</a></h3>
+<p>The most fundamental datastructure within NumPy is called NDArray.</p>
+<p>You can create a NDArray by simply converting regular Python lists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[9 7 0 1]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="data-types">
+<h4>Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h4>
+<p>Type defines what type of data is contained within an array.</p>
+<blockquote>
+<div><p><em>All elements within a NDArray must be the same type, unlike Python lists.</em></p>
+</div></blockquote>
+<blockquote>
+<div><p><strong>Common data types within NumPy</strong></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int32</span></code> - 32-bit integer, -2147483648 to 2147483647</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">int64</span></code> - 64-bit integer, -9223372036854775808 to 9223372036854775807</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float32</span></code> - Single precision float</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">float64</span></code> - Double precision float</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex64</span></code> - Complex number represented by 2 32-bit floats</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">complex128</span></code> - Complex number represented by 2 64-bit floats</p></li>
+</ul>
+<p>To see what type of data is contained with in an array, use the following command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">dtype</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>dtype(&#39;int64&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="shape">
+<h4>Shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h4>
+<p>Shape defines how many elements an array can contain within each dimension.</p>
+<p>To see the shape of an array, use the following command.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># 1 dim array with 4 elements</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(4,)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
+<span class="n">b</span><span class="o">.</span><span class="n">shape</span> <span class="c1"># 2 x 4 array</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(2, 4)
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p>In general, a n-dimension array has the shape of</p>
+</div></blockquote>
+<blockquote>
+<div><p><code class="docutils literal notranslate"><span class="pre">shape</span> <span class="pre">=</span> <span class="pre">(xn,</span> <span class="pre">xn-1,</span> <span class="pre">xn-2,</span> <span class="pre">…,</span> <span class="pre">x1)</span></code></p>
+</div></blockquote>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(n\)</span> is the dimension count. <span class="math notranslate nohighlight">\(x_i\)</span> is the element count at <span class="math notranslate nohighlight">\(i^{th}\)</span> dimension.</p>
+</div></blockquote>
+</div>
+<div class="section" id="array-creation">
+<h4>Array Creation<a class="headerlink" href="#array-creation" title="Permalink to this headline">¶</a></h4>
+<p>Not just converting lists to arrays, NumPy also provides many helpful functions to let you quickly create them from scratch.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> <span class="c1"># 3x3 array filled with zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">zeros</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0.]
+ [0. 0. 0.]
+ [0. 0. 0.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> <span class="c1"># 4x5 array filled with ones</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]
+ [1. 1. 1. 1. 1.]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span> <span class="c1"># 5 to 8</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[5 6 7 8]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">)</span> <span class="c1"># 2x7x3 array filled with e</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[[[2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]]
+
+ [[2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]
+  [2.71828183 2.71828183 2.71828183]]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c_zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span> <span class="c1"># 2x2 array with complex zeros</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c_zeros</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[[0.+0.j 0.+0.j]
+ [0.+0.j 0.+0.j]]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">lin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">int</span><span class="p">)</span> <span class="c1"># Linearly spaced array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">lin</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[ 0  2  4  6  8 11 13 15 17 20]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># Log spaced array</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[1.00000000e+00 1.66810054e+02 2.78255940e+04 4.64158883e+06
+ 7.74263683e+08 1.29154967e+11 2.15443469e+13 3.59381366e+15
+ 5.99484250e+17 1.00000000e+20]
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><strong>Most used array creation functions</strong></p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.empty(shape[,</span> <span class="pre">dtype,</span> <span class="pre">order])</span></code> - Create an empty array with no values.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.ones(shape[,</span> <span class="pre">dtype,</span> <span class="pre">order])</span></code> - Create an array with 1s.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.zeros(shape[,</span> <span class="pre">dtype,</span> <span class="pre">order])</span></code> - Create an array with 0s.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.full(shape,</span> <span class="pre">fill_value[,</span> <span class="pre">dtype,</span> <span class="pre">order])</span></code> - Create an array with <code class="docutils literal notranslate"><span class="pre">fill_value</span></code>s.</p></li>
+</ul>
+<blockquote>
+<div><p>Following are very similar to above functions, but instead of passing <code class="docutils literal notranslate"><span class="pre">shape</span></code>, you pass another array, and it will create a new array with the same shape.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.empty_like(a[,</span> <span class="pre">dtype,</span> <span class="pre">order,</span> <span class="pre">subok])</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.ones_like(a[,</span> <span class="pre">dtype,</span> <span class="pre">order,</span> <span class="pre">subok])</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.zeros_like(a[,</span> <span class="pre">dtype,</span> <span class="pre">order,</span> <span class="pre">subok])</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">full_like(a,</span> <span class="pre">fill_value[,</span> <span class="pre">dtype,</span> <span class="pre">order,</span> <span class="pre">subok])</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>Creating ranges</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.arange([start,]</span> <span class="pre">stop[,</span> <span class="pre">step,][,</span> <span class="pre">dtype])</span></code> - Evenly spaced values</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop[,</span> <span class="pre">num,</span> <span class="pre">endpoint,</span> <span class="pre">...])</span></code> - Evenly spaced values, however you can specify <code class="docutils literal notranslate"><span class="pre">start</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.logspace(start,</span> <span class="pre">stop[,</span> <span class="pre">num,</span> <span class="pre">endpoint,</span> <span class="pre">base,</span> <span class="pre">...])</span></code> - Spaced evenly on log scale</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.geomspace(start,</span> <span class="pre">stop[,</span> <span class="pre">num,</span> <span class="pre">endpoint,</span> <span class="pre">dtype])</span></code> - Spaced evenly on log scale (geometric progression)</p></li>
+</ul>
+</div>
+<div class="section" id="indexing">
+<h4>Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h4>
+<p>Index for NumPy arrays is very similar to Python lists.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># You can also use this syntax</span>
+<span class="n">b</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="array-operations">
+<h4>Array Operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># First define two arrays</span>
+<span class="n">k</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">1.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">3.0</span><span class="p">])</span>
+<span class="n">j</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">,</span> <span class="mf">2.0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can do basic arithmetic operations on two arrays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">j</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[3. 4. 5.]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">j</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[2. 4. 6.]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Notice the result of <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">j</span></code> might be weird if you are familiar with matrices.</p>
+<p><strong>Array != Matrix</strong></p>
+<p>Array operations are element-wise, which means <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">j</span></code> simply multiplies the elements with same index. Most cases, you would operate on two arrays with the same shape. You can, however, operate on two different shaped arrays, this brings us to <strong>broadcasting</strong>.</p>
+</div>
+<div class="section" id="broadcasting">
+<h4>Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h4>
+<p>Broadcasting allows array operations to occur within C instead of Python. Which is much faster.</p>
+<p>And it allows us to operate on differently shaped arrays, with some constraints.</p>
+<p><img alt="" src="https://www.evernote.com/l/Aq2wONNsbSFJ_Z7_JyPS3U5T3QQ3ULrYrVgB/image.png" /></p>
+<p><img alt="" src="https://www.evernote.com/l/Aq3NWqDzrodAxJe2An6QGBOmGDDWtJFA-5MB/image.png" /></p>
+<p><img alt="" src="https://www.evernote.com/l/Aq18pMOG1uxFEbV_6c6dJ5Ie3RIu5-JkEuoB/image.png" /></p>
+<p><img alt="" src="https://www.evernote.com/l/Aq1F-XUu2GtKVLD1aBhxoDniSfD43QHbyooB/image.png" /></p>
+<blockquote>
+<div><p>If you wish to learn more, follow this link: http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+<div class="section" id="break">
+<h2>Break<a class="headerlink" href="#break" title="Permalink to this headline">¶</a></h2>
+<p>https://goo.gl/forms/m4vcs0RtPAVZawX93</p>
+</div>
+<div class="section" id="matplotlib">
+<h2>Matplotlib<a class="headerlink" href="#matplotlib" title="Permalink to this headline">¶</a></h2>
+<p>Matplotlib is a very popular plotting library for Python. https://matplotlib.org.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import matplotlib</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s start by plotting some arrays with colour mesh!
+Colour mesh can plot simple 2-d arrays.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span>
+<span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(1, 1000) (1000,)
+(1, 1000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">mesh</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ffcd40a1710&gt;
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_44_1.png" src="../../_images/01_intermediate_python_44_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use meshgrid (https://docs.scipy.org/doc/numpy/reference/generated/numpy.meshgrid.html)</span>
+<span class="n">mesh_b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span><span class="mi">1000</span><span class="p">))</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">1000</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mesh_b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">xx</span><span class="p">,</span> <span class="n">yy</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">meshgrid</span><span class="p">(</span><span class="n">mesh</span><span class="p">,</span> <span class="n">mesh_b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">xx</span><span class="o">.</span><span class="n">shape</span><span class="p">,</span><span class="n">yy</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+<span class="n">mesh_c</span> <span class="o">=</span> <span class="n">xx</span> <span class="o">*</span> <span class="n">yy</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mesh_c</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(1, 1000)
+(1000, 1000) (1000, 1000)
+(1000, 1000)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">mesh_c</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.colorbar.Colorbar at 0x7ffcd59e9cf8&gt;
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_46_1.png" src="../../_images/01_intermediate_python_46_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot the transpose</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">pcolormesh</span><span class="p">(</span><span class="n">mesh</span><span class="o">.</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.QuadMesh at 0x7ffcdb065a90&gt;
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_47_1.png" src="../../_images/01_intermediate_python_47_1.png" />
+</div>
+</div>
+<blockquote>
+<div><p>There are many more operations you can do to arrays. Most of them are very intuitive, you don’t even need a reference :).</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.meshgrid(ndarray,</span> <span class="pre">ndarray)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.reshape(ndarray,</span> <span class="pre">shape)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.resize(ndarray,</span> <span class="pre">size)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.tile(ndarray,</span> <span class="pre">reps)</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.sum()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.mean()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ndarray.std()</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">plt.plot(x,</span> <span class="pre">y)</span></code></p></li>
+</ul>
+<blockquote>
+<div><p>You can find the full NumPy reference here: https://docs.scipy.org/doc/numpy-1.13.0/reference/index.html</p>
+</div></blockquote>
+<p>Now let’s plot some graphs. To plot a graph, you will need x coordinates and y coordinates.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create our x coordinates</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="mi">100</span><span class="p">)</span>
+<span class="c1"># Our y will simply be sin(x)</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We now have x and y coordinates, we can plot the graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffcd32a6cc0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_52_1.png" src="../../_images/01_intermediate_python_52_1.png" />
+</div>
+</div>
+<p>You can play around with the styling, and generate more interesting graphs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;o&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffcdb199fd0&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_54_1.png" src="../../_images/01_intermediate_python_54_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;go&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffcdb2052e8&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_55_1.png" src="../../_images/01_intermediate_python_55_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffcdb324748&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_56_1.png" src="../../_images/01_intermediate_python_56_1.png" />
+</div>
+</div>
+<blockquote>
+<div><p>Format string</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>Format string is with the format of <code class="docutils literal notranslate"><span class="pre">fmt</span> <span class="pre">=</span> <span class="pre">'[color][marker][line]'</span></code></p></li>
+<li><p>For example, <code class="docutils literal notranslate"><span class="pre">r+</span></code> simply means red with + marker.</p></li>
+<li><p>Full documentation can be found at: https://matplotlib.org/api/_as_gen/matplotlib.pyplot.plot.html#matplotlib.pyplot.plot under Notes secion.</p></li>
+</ul>
+<p>You can plot multiple sets of data on the same graph.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;go&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffcdb351c88&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_59_1.png" src="../../_images/01_intermediate_python_59_1.png" />
+</div>
+</div>
+<p>It might be very hard to make out what above graph is, we can use legends to solve this.</p>
+<p>There are more fancy stuff you can do with graphs you will see later.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;r+&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;sine&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="s1">&#39;go&#39;</span><span class="p">,</span> <span class="n">linewidth</span><span class="o">=</span><span class="mi">4</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s2">&quot;cosine&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="s2">&quot;upper left&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7ffcdb4b84a8&gt;
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_61_1.png" src="../../_images/01_intermediate_python_61_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="real-data">
+<h2>Real Data<a class="headerlink" href="#real-data" title="Permalink to this headline">¶</a></h2>
+<p>Now let’s plot some real data.</p>
+<p>You should already have the <code class="docutils literal notranslate"><span class="pre">argo_float_4901412.npz</span></code> file under this folder, if not, download it from https://www.ldeo.columbia.edu/~rpa/argo_float_4901412.npz.</p>
+<p>Before plotting, let’s load the file into NumPy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="s1">&#39;argo_float_4901412.npz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can examine the data using some simple commands.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">files</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;S&#39;, &#39;T&#39;, &#39;levels&#39;, &#39;lon&#39;, &#39;date&#39;, &#39;P&#39;, &#39;lat&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>S is for salinity, T is for temperature and P is for density.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;levels&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([ 0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16,
+       17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33,
+       34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50,
+       51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67,
+       68, 69, 70, 71, 72, 73, 74, 75, 76, 77])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(78, 75)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;levels&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(78,)
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also do regular NumPy operations on <code class="docutils literal notranslate"><span class="pre">data</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;levels&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>0
+</pre></div>
+</div>
+</div>
+</div>
+<p>Data is collected bi-monthly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([&#39;2012-07-13T22:33:06.019200000&#39;, &#39;2012-07-23T22:54:59.990400000&#39;,
+       &#39;2012-08-02T22:55:52.003200000&#39;, &#39;2012-08-12T23:08:59.971200000&#39;,
+       &#39;2012-08-22T23:29:01.968000000&#39;, &#39;2012-09-01T23:17:38.976000000&#39;,
+       &#39;2012-09-12T02:59:18.960000000&#39;, &#39;2012-09-21T23:18:37.036800000&#39;,
+       &#39;2012-10-02T03:00:17.971200000&#39;, &#39;2012-10-11T23:13:27.984000000&#39;,
+       &#39;2012-10-22T02:50:32.006400000&#39;, &#39;2012-10-31T23:36:39.974400000&#39;,
+       &#39;2012-11-11T02:40:46.041600000&#39;, &#39;2012-11-20T23:08:29.990400000&#39;,
+       &#39;2012-12-01T02:47:51.993600000&#39;, &#39;2012-12-10T23:23:16.972800000&#39;,
+       &#39;2012-12-21T02:58:48.979200000&#39;, &#39;2012-12-30T23:07:23.030400000&#39;,
+       &#39;2013-01-10T02:56:43.008000000&#39;, &#39;2013-01-19T23:24:26.956800000&#39;,
+       &#39;2013-01-30T02:43:53.011200000&#39;, &#39;2013-02-08T23:15:27.043200000&#39;,
+       &#39;2013-02-19T01:12:50.976000000&#39;, &#39;2013-02-28T23:07:13.008000000&#39;,
+       &#39;2013-03-11T02:43:30.979200000&#39;, &#39;2013-03-20T23:17:22.992000000&#39;,
+       &#39;2013-03-31T01:50:38.025600000&#39;, &#39;2013-04-09T23:19:07.968000000&#39;,
+       &#39;2013-04-20T02:53:29.990400000&#39;, &#39;2013-04-29T23:28:33.024000000&#39;,
+       &#39;2013-05-10T02:50:18.009600000&#39;, &#39;2013-05-19T23:21:05.990400000&#39;,
+       &#39;2013-05-30T02:50:30.969600000&#39;, &#39;2013-06-08T23:32:49.027200000&#39;,
+       &#39;2013-06-19T03:42:51.004800000&#39;, &#39;2013-06-28T23:32:16.022400000&#39;,
+       &#39;2013-07-09T03:28:30.979199999&#39;, &#39;2013-07-18T23:33:57.974400000&#39;,
+       &#39;2013-07-29T03:15:42.019200000&#39;, &#39;2013-08-07T23:25:02.035200000&#39;,
+       &#39;2013-08-18T01:47:44.966400000&#39;, &#39;2013-08-28T03:02:59.020800000&#39;,
+       &#39;2013-09-07T03:03:51.984000000&#39;, &#39;2013-09-16T23:32:07.987200000&#39;,
+       &#39;2013-09-27T04:08:27.974400000&#39;, &#39;2013-10-06T23:25:39.964800000&#39;,
+       &#39;2013-10-17T02:55:50.995200000&#39;, &#39;2013-10-27T03:45:47.001600000&#39;,
+       &#39;2013-11-06T01:14:52.022400000&#39;, &#39;2013-11-16T03:29:54.009600000&#39;,
+       &#39;2013-11-26T03:03:56.995200000&#39;, &#39;2013-12-05T23:33:59.011200000&#39;,
+       &#39;2013-12-16T02:58:01.977600000&#39;, &#39;2013-12-25T23:22:43.017600000&#39;,
+       &#39;2014-01-05T02:52:06.009600000&#39;, &#39;2014-01-14T23:41:18.009600000&#39;,
+       &#39;2014-01-25T03:00:43.977600000&#39;, &#39;2014-02-03T23:29:13.977600000&#39;,
+       &#39;2014-02-14T02:50:11.961600000&#39;, &#39;2014-02-23T23:03:21.974400000&#39;,
+       &#39;2014-03-06T02:58:03.964800000&#39;, &#39;2014-03-15T23:10:28.012800000&#39;,
+       &#39;2014-03-26T02:51:22.032000000&#39;, &#39;2014-04-04T23:25:58.972800000&#39;,
+       &#39;2014-04-15T03:00:45.964800000&#39;, &#39;2014-04-24T23:24:40.003200000&#39;,
+       &#39;2014-05-05T02:56:22.012800000&#39;, &#39;2014-05-15T00:10:06.009600000&#39;,
+       &#39;2014-05-25T03:02:43.036800000&#39;, &#39;2014-06-03T23:34:53.961600000&#39;,
+       &#39;2014-06-14T03:01:23.980800000&#39;, &#39;2014-06-23T23:24:31.968000000&#39;,
+       &#39;2014-07-04T03:08:30.019200000&#39;, &#39;2014-07-13T23:47:43.008000000&#39;,
+       &#39;2014-07-24T03:02:33.014400000&#39;], dtype=&#39;datetime64[ns]&#39;)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>nan
+</pre></div>
+</div>
+</div>
+</div>
+<p>Oops! NumPy just encountered an error. This means there are invalid entries within column T.</p>
+<p>If we examine the <code class="docutils literal notranslate"><span class="pre">T</span></code> column, you should see some entries are <code class="docutils literal notranslate"><span class="pre">nan</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>array([[18.97400093, 18.43700027, 19.09900093, ..., 19.11300087,
+        21.82299995, 20.13100052],
+       [18.74099922, 18.39999962, 19.08200073, ..., 18.47200012,
+        19.45999908, 20.125     ],
+       [18.37000084, 18.37400055, 19.06500053, ..., 18.22999954,
+        19.26199913, 20.07699966],
+       ...,
+       [ 3.79299998,  3.81399989,  3.80200005, ...,  3.80699992,
+         3.81100011,  3.8599999 ],
+       [ 3.76399994,  3.77800012,  3.75699997, ...,  3.75399995,
+         3.74600005,  3.80599999],
+       [ 3.74399996,  3.74600005,  3.7249999 , ...,         nan,
+         3.71399999,         nan]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We cannot proceed until this issue is resolved. We have a few options:</p>
+<ul class="simple">
+<li><p>Delete <code class="docutils literal notranslate"><span class="pre">nan</span></code> entries? You can’t delete the invalid entry, that will mess up the shape.</p></li>
+<li><p>Manually assign fake values? It can be tedious.</p></li>
+</ul>
+<p>Usually if this happends, we use something called <strong>Masked Arrays</strong>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[[18.974000930786133 18.437000274658203 19.099000930786133 ...
+  19.113000869750977 21.822999954223633 20.131000518798828]
+ [18.740999221801758 18.399999618530273 19.082000732421875 ...
+  18.472000122070312 19.459999084472656 20.125]
+ [18.3700008392334 18.374000549316406 19.065000534057617 ...
+  18.229999542236328 19.261999130249023 20.07699966430664]
+ ...
+ [3.7929999828338623 3.813999891281128 3.802000045776367 ...
+  3.806999921798706 3.811000108718872 3.859999895095825]
+ [3.7639999389648438 3.7780001163482666 3.756999969482422 ...
+  3.753999948501587 3.746000051498413 3.805999994277954]
+ [3.74399995803833 3.746000051498413 3.7249999046325684 ... --
+  3.7139999866485596 --]]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Above command will create a new masked array called <code class="docutils literal notranslate"><span class="pre">T</span></code> with all invalid entries masked.</p>
+<p>A mask is simply an array with same shape as data, with 0 and 1 as values. If value is 1, then corresponding data will be ignored.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">(</span><span class="s1">&#39;nan&#39;</span><span class="p">),</span><span class="mi">5</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[ 1.  2.  3. nan  5.]
+nan
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">mx</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_array</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">]),</span> <span class="n">mask</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[1 2 3 -- 5]
+2.75
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can now fix our data!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">T</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">])</span>
+<span class="n">S</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">])</span>
+<span class="n">P</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_invalid</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now the data is fixed, we can plot it.</p>
+<p>First, let’s do a histogram of T</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">ravel</span><span class="p">(</span><span class="n">T</span><span class="p">)</span><span class="o">.</span><span class="n">compressed</span><span class="p">())</span> <span class="c1">#compressed ignores the masked values</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(array([1320.,  413.,  326.,  420., 1295., 1503.,  242.,  148.,   44.,
+          38.]),
+ array([ 3.53200006,  5.61530004,  7.69860001,  9.78189998, 11.86519995,
+        13.94849992, 16.03179989, 18.11509986, 20.19839983, 22.2816998 ,
+        24.36499977]),
+ &lt;a list of 10 Patch objects&gt;)
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_86_1.png" src="../../_images/01_intermediate_python_86_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">0</span><span class="p">,:],</span><span class="n">label</span> <span class="o">=</span> <span class="s1">&#39;Surface&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">T</span><span class="p">[</span><span class="mi">60</span><span class="p">,:],</span><span class="n">label</span> <span class="o">=</span> <span class="nb">str</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">P</span><span class="p">[</span><span class="mi">60</span><span class="p">,:])))</span> <span class="o">+</span> <span class="s1">&#39; db&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper left&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">0</span><span class="p">,:])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">S</span><span class="p">[</span><span class="mi">60</span><span class="p">,:])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7ffcd6961b00&gt;]
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_87_1.png" src="../../_images/01_intermediate_python_87_1.png" />
+</div>
+</div>
+<p>Now, let’s do a scatter plot. A T-S plot is a common way to plot ocean properties.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffcd69f2780&gt;
+</pre></div>
+</div>
+<img alt="../../_images/01_intermediate_python_89_1.png" src="../../_images/01_intermediate_python_89_1.png" />
+</div>
+</div>
+<div class="section" id="more-plots">
+<h3>More Plots<a class="headerlink" href="#more-plots" title="Permalink to this headline">¶</a></h3>
+<p>Play around with matplotlib! It is more powerful than you think.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with title</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_91_0.png" src="../../_images/01_intermediate_python_91_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with x and y labels</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_92_0.png" src="../../_images/01_intermediate_python_92_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Resize plot</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">20</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span> <span class="c1"># Resize</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_93_0.png" src="../../_images/01_intermediate_python_93_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with color bar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span> <span class="c1"># Add color bar</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_94_0.png" src="../../_images/01_intermediate_python_94_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiple plots</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span> <span class="c1"># Add color bar</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_95_0.png" src="../../_images/01_intermediate_python_95_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with different colour</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;wo-&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_96_0.png" src="../../_images/01_intermediate_python_96_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with math text on it</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;y&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;wo-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.6</span><span class="p">,</span> <span class="sa">r</span><span class="s1">&#39;$sin(x)$&#39;</span><span class="p">,</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_97_0.png" src="../../_images/01_intermediate_python_97_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plotting-resources">
+<h2>Plotting Resources<a class="headerlink" href="#plotting-resources" title="Permalink to this headline">¶</a></h2>
+<p>https://matplotlib.org/gallery.html
+Great place to find more demos.</p>
+<p>Let’s suppose we want to compute the density of our samples using an equation of state for sea water.</p>
+<p><span class="math notranslate nohighlight">\(\rho\)</span> = <span class="math notranslate nohighlight">\(\rho_{0}\)</span> + AS + BS<span class="math notranslate nohighlight">\(^{1.5}\)</span> + CS<span class="math notranslate nohighlight">\(^{2}\)</span></p>
+<p>where A and B are functions for temperature.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rho_0</span> <span class="o">=</span> <span class="mf">999.842594</span> <span class="o">+</span> <span class="mf">6.793952e-2</span><span class="o">*</span><span class="n">T</span> <span class="o">-</span> <span class="mf">9.095290e-3</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mf">1.001685e-4</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">3</span> <span class="o">-</span> <span class="mf">1.120083e-6</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">4</span> <span class="o">+</span> <span class="mf">6.536332e-9</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">5</span>
+<span class="n">A</span> <span class="o">=</span> <span class="mf">8.24493e-1</span> <span class="o">-</span> <span class="mf">4.0899e-3</span><span class="o">*</span><span class="n">T</span> <span class="o">+</span> <span class="mf">7.6438e-5</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span> <span class="o">-</span> <span class="mf">8.2467e-7</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">3</span> <span class="o">+</span> <span class="mf">5.3875e-9</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">4</span>
+<span class="n">B</span> <span class="o">=</span> <span class="mf">5.72466e-3</span> <span class="o">+</span> <span class="mf">1.0227e-4</span><span class="o">*</span><span class="n">T</span> <span class="o">-</span> <span class="mf">1.6546e-6</span><span class="o">*</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span>
+<span class="n">C</span> <span class="o">=</span> <span class="mf">4.8314e-4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">rho</span> <span class="o">=</span> <span class="n">rho_0</span> <span class="o">+</span> <span class="n">A</span><span class="o">*</span><span class="n">S</span> <span class="o">+</span> <span class="n">B</span><span class="o">*</span><span class="n">S</span><span class="o">**</span><span class="p">(</span><span class="mf">1.5</span><span class="p">)</span> <span class="o">+</span> <span class="n">C</span><span class="o">*</span><span class="n">S</span><span class="o">**</span><span class="mi">2</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">subplot</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">rho</span><span class="p">,</span> <span class="n">S</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;My Plot Title&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;My X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;My Y&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">colorbar</span><span class="p">()</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/01_intermediate_python_104_0.png" src="../../_images/01_intermediate_python_104_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">P</span><span class="p">[</span><span class="mi">70</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>masked_array(data=[1650.800048828125, 1650.2999267578125,
+                   1650.199951171875, 1650.2999267578125,
+                   1650.300048828125, 1650.4000244140625,
+                   1650.5999755859375, 1650.199951171875, 1650.5,
+                   1650.9000244140625, 1650.0999755859375, 1650.5,
+                   1649.300048828125, 1649.800048828125,
+                   1650.4000244140625, 1649.7999267578125,
+                   1650.199951171875, 1650.7000732421875,
+                   1650.300048828125, 1650.9000244140625, 1650.5,
+                   1649.699951171875, --, 1650.800048828125,
+                   1649.9000244140625, 1650.199951171875,
+                   1650.9000244140625, 1649.9000244140625,
+                   1650.800048828125, 1650.0999755859375, 1650.5,
+                   1650.5999755859375, 1649.9000244140625,
+                   1650.7000732421875, 1650.5999755859375, 1650.0, 1650.5,
+                   1650.5, 1650.39990234375, 1649.7000732421875,
+                   1650.300048828125, 1650.4000244140625,
+                   1650.7000732421875, 1650.0, 1650.699951171875, 1650.0,
+                   1650.4000244140625, 1650.0999755859375, 1650.5, 1650.0,
+                   1650.0999755859375, 1650.0999755859375,
+                   1650.10009765625, 1650.199951171875,
+                   1650.2999267578125, 1650.5999755859375,
+                   1650.4000244140625, 1650.800048828125,
+                   1649.9000244140625, 1649.7000732421875, 1651.0,
+                   1650.4000244140625, 1650.39990234375, 1650.5,
+                   1650.9000244140625, 1650.199951171875,
+                   1650.7999267578125, 1650.0999755859375, 1650.5,
+                   1650.2000732421875, 1650.800048828125,
+                   1650.7000732421875, 1650.800048828125, 1650.5,
+                   1649.800048828125],
+             mask=[False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False,  True, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False, False, False, False, False, False,
+                   False, False, False],
+       fill_value=1e+20)
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "kls2177/ctl-python-workshop",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./chapters/intermediate"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="intermediate_intro.html" title="previous page">Introduction</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Karen Smith<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    <script src="../../_static/js/index.js"></script>
+    
+  </body>
+</html>

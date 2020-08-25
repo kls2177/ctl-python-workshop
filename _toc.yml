@@ -1,0 +1,14 @@
+- file: chapters/index
+- file: chapters/introduction/intro
+  sections:
+    - file: chapters/introduction/aboutthisbook
+    - file: chapters/introduction/howtousethisbook
+- file: chapters/basic/beginner_intro
+  sections:
+    - file: chapters/basic/01_basic_python
+    - file: chapters/basic/01_basic_exercises
+    - file: chapters/basic/02_basic_python
+    - file: chapters/basic/02_basic_exercises
+- file: chapters/intermediate/intermediate_intro
+  sections:
+    - file: chapters/intermediate/01_intermediate_python
