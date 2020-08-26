@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Exercises &#8212; Basic and Intermediate Python</title>
+    <title>Exercises: Part II &#8212; Basic and Intermediate Python</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
     <link href="../../_static/css/index.css" rel="stylesheet">
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
@@ -50,8 +50,8 @@
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/basic/02_basic_exercises.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Exercises" />
-<meta property="og:description" content="Exercises  Write a function that takes in a list, and returns the largest number. You cannot use built-in max().  You can assume input have at least 1 number.  " />
+<meta property="og:title"       content="Exercises: Part II" />
+<meta property="og:description" content="Exercises: Part II  Here we will use what we’ve learned to remove missing data from a list. As boring as this sounds, managing missing data is a very common iss" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -108,7 +108,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="01_basic_exercises.html">
-     Exercises
+     Exercises: Part I
     </a>
    </li>
    <li class="toctree-l2">
@@ -118,7 +118,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Exercises
+     Exercises: Part II
     </a>
    </li>
   </ul>
@@ -226,11 +226,145 @@
         
               <div>
                 
-  <div class="section" id="exercises">
-<h1>Exercises<a class="headerlink" href="#exercises" title="Permalink to this headline">¶</a></h1>
-<p>Write a function that takes in a list, and returns the largest number. You cannot use built-in max().</p>
-<p>You can assume input have at least 1 number.</p>
-<p>Write a function that takes in a list, returns a new reversed list. You <strong>cannot</strong> mutate the original list.</p>
+  <div class="section" id="exercises-part-ii">
+<h1>Exercises: Part II<a class="headerlink" href="#exercises-part-ii" title="Permalink to this headline">¶</a></h1>
+<p>Here we will use what we’ve learned to remove missing data from a list. As boring as this sounds, managing missing data is a very common issue in scientific computing. So, let’s give it a try.</p>
+<p>In the example below, we have bunch of data that we want to add together but some is missing. Missing data points are flagged with the number -99, so if we include this data in our sum, the results will be incorrect. We want to remove these from our data set before we do our sum.</p>
+<p>We will be reading in a file called <code class="docutils literal notranslate"><span class="pre">missing_data.csv</span></code>. To read this in, we are going to cheat and use a <strong>package</strong> called <strong>csv</strong>. You can read it in without this package, but it is a bit cumbersome. In Module 2, we will learn more about importing packages.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># import csv package</span>
+<span class="kn">import</span> <span class="nn">csv</span>
+
+<span class="c1"># read in data using csv</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;missing_data.csv&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">reader</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">reader</span><span class="p">(</span><span class="n">f</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
+    <span class="n">sample</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">reader</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;-5&#39;, &#39;-1&#39;, &#39;4&#39;, &#39;-3&#39;, &#39;-4&#39;, &#39;5&#39;, &#39;-3&#39;, &#39;-1&#39;, &#39;-4&#39;, &#39;-99&#39;, &#39;2&#39;, &#39;1&#39;, &#39;4&#39;, &#39;-5&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-2&#39;, &#39;4&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-99&#39;, &#39;-99&#39;, &#39;4&#39;, &#39;0&#39;, &#39;-1&#39;, &#39;0&#39;, &#39;-4&#39;, &#39;4&#39;, &#39;0&#39;, &#39;0&#39;, &#39;-3&#39;, &#39;4&#39;, &#39;-2&#39;, &#39;0&#39;, &#39;-5&#39;, &#39;1&#39;, &#39;3&#39;, &#39;-2&#39;, &#39;5&#39;, &#39;-2&#39;, &#39;-4&#39;, &#39;-3&#39;, &#39;-99&#39;, &#39;4&#39;, &#39;-5&#39;, &#39;5&#39;, &#39;-1&#39;, &#39;-2&#39;, &#39;-1&#39;, &#39;0&#39;, &#39;5&#39;, &#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;2&#39;, &#39;2&#39;, &#39;-1&#39;, &#39;4&#39;, &#39;1&#39;, &#39;1&#39;, &#39;-5&#39;, &#39;-99&#39;, &#39;-4&#39;, &#39;-99&#39;, &#39;-2&#39;, &#39;2&#39;, &#39;-3&#39;, &#39;0&#39;, &#39;-2&#39;, &#39;0&#39;, &#39;-2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;-1&#39;, &#39;3&#39;, &#39;4&#39;, &#39;1&#39;, &#39;-4&#39;, &#39;1&#39;, &#39;2&#39;, &#39;-5&#39;, &#39;-99&#39;, &#39;0&#39;, &#39;-1&#39;, &#39;5&#39;, &#39;-5&#39;, &#39;0&#39;, &#39;3&#39;, &#39;3&#39;, &#39;-1&#39;, &#39;3&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;5&#39;, &#39;3&#39;, &#39;-99&#39;, &#39;-3&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You should be able to see the -99 values in the data above.</p>
+<p>Let’s check what data structure <code class="docutils literal notranslate"><span class="pre">sample</span></code> is. Is it a list, a dictionary, a tuple?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># check type of data structure using type()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s check the type of data in <code class="docutils literal notranslate"><span class="pre">sample</span></code>. Use indexing and type() to do this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># pick an element of sample and find the data type</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s try to remove the missing data and compute the sum using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. We should have two new things at the end of our loop, a new list with no missing data and a sum that excludes the missing data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove missing data and sum</span>
+<span class="n">sample_sum</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initialize sum</span>
+<span class="n">new_sample</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># initialize new list</span>
+
+<span class="c1"># loop over elements of sample (remove the number sign below to get started)</span>
+<span class="c1">#for s in sample:</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<p>Try it on your own before you click to reveal the answer below. Note that this is an answer - you may have written the code differently but got the correct output. This is fine.</p>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove missing data and sum</span>
+<span class="n">sample_sum</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">new_sample</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="c1"># loop over elements of sample</span>
+<span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">:</span>
+    <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="c1"># note we need to do a type conversion!</span>
+    <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="o">-</span><span class="mi">99</span><span class="p">:</span>
+        <span class="n">sample_sum</span> <span class="o">=</span> <span class="n">sample_sum</span>
+        <span class="n">new_sample</span> <span class="o">=</span> <span class="n">new_sample</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">sample_sum</span> <span class="o">+=</span> <span class="n">s</span>
+        <span class="n">new_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">sample_sum</span><span class="p">,</span> <span class="n">new_sample</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>1 [-5, -1, 4, -3, -4, 5, -3, -1, -4, 2, 1, 4, -5, -1, -1, -1, -2, 4, -1, -1, 4, 0, -1, 0, -4, 4, 0, 0, -3, 4, -2, 0, -5, 1, 3, -2, 5, -2, -4, -3, 4, -5, 5, -1, -2, -1, 0, 5, 0, 1, 3, 2, 2, -1, 4, 1, 1, -5, -4, -2, 2, -3, 0, -2, 0, -2, 3, 4, -1, 3, 4, 1, -4, 1, 2, -5, 0, -1, 5, -5, 0, 3, 3, -1, 3, -1, -1, -1, 5, 3, -3]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s try the same thing but write it as a function. Again, try it on your own before you click to reveal.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># function to remove missing data and compute the sum (remove the number sign below to get started)</span>
+
+<span class="c1">#def manage_missing_data(l):</span>
+    
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># function to remove missing data and compute the sum </span>
+<span class="k">def</span> <span class="nf">manage_missing_data</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+    <span class="n">sample_sum</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">new_sample</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="c1"># loop over elements of sample</span>
+    <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">sample</span><span class="p">:</span>
+        <span class="n">s</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">s</span> <span class="o">==</span> <span class="o">-</span><span class="mi">99</span><span class="p">:</span>
+            <span class="n">sample_sum</span> <span class="o">=</span> <span class="n">sample_sum</span>
+            <span class="n">new_sample</span> <span class="o">=</span> <span class="n">new_sample</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">sample_sum</span> <span class="o">+=</span> <span class="n">s</span>
+            <span class="n">new_sample</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">sample_sum</span><span class="p">,</span> <span class="n">new_sample</span>
+
+<span class="c1"># call function</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">manage_missing_data</span><span class="p">(</span><span class="n">sample</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(1, [-5, -1, 4, -3, -4, 5, -3, -1, -4, 2, 1, 4, -5, -1, -1, -1, -2, 4, -1, -1, 4, 0, -1, 0, -4, 4, 0, 0, -3, 4, -2, 0, -5, 1, 3, -2, 5, -2, -4, -3, 4, -5, 5, -1, -2, -1, 0, 5, 0, 1, 3, 2, 2, -1, 4, 1, 1, -5, -4, -2, 2, -3, 0, -2, 0, -2, 3, 4, -1, 3, 4, 1, -4, 1, 2, -5, 0, -1, 5, -5, 0, 3, 3, -1, 3, -1, -1, -1, 5, 3, -3])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Finally, let’s suppose that we want to keep both data sets, the one with missing values and the one without, and store them in a dictionary. How would you construct this dictionary?</p>
+<div class="cell tag_hide-input tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Dictionary of data</span>
+<span class="n">all_data</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;original&#39;</span><span class="p">:</span> <span class="n">sample</span><span class="p">,</span> <span class="s1">&#39;no missing&#39;</span><span class="p">:</span> <span class="n">new_sample</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">all_data</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>{&#39;original&#39;: [&#39;-5&#39;, &#39;-1&#39;, &#39;4&#39;, &#39;-3&#39;, &#39;-4&#39;, &#39;5&#39;, &#39;-3&#39;, &#39;-1&#39;, &#39;-4&#39;, &#39;-99&#39;, &#39;2&#39;, &#39;1&#39;, &#39;4&#39;, &#39;-5&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-2&#39;, &#39;4&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-99&#39;, &#39;-99&#39;, &#39;4&#39;, &#39;0&#39;, &#39;-1&#39;, &#39;0&#39;, &#39;-4&#39;, &#39;4&#39;, &#39;0&#39;, &#39;0&#39;, &#39;-3&#39;, &#39;4&#39;, &#39;-2&#39;, &#39;0&#39;, &#39;-5&#39;, &#39;1&#39;, &#39;3&#39;, &#39;-2&#39;, &#39;5&#39;, &#39;-2&#39;, &#39;-4&#39;, &#39;-3&#39;, &#39;-99&#39;, &#39;4&#39;, &#39;-5&#39;, &#39;5&#39;, &#39;-1&#39;, &#39;-2&#39;, &#39;-1&#39;, &#39;0&#39;, &#39;5&#39;, &#39;0&#39;, &#39;1&#39;, &#39;3&#39;, &#39;2&#39;, &#39;2&#39;, &#39;-1&#39;, &#39;4&#39;, &#39;1&#39;, &#39;1&#39;, &#39;-5&#39;, &#39;-99&#39;, &#39;-4&#39;, &#39;-99&#39;, &#39;-2&#39;, &#39;2&#39;, &#39;-3&#39;, &#39;0&#39;, &#39;-2&#39;, &#39;0&#39;, &#39;-2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;-1&#39;, &#39;3&#39;, &#39;4&#39;, &#39;1&#39;, &#39;-4&#39;, &#39;1&#39;, &#39;2&#39;, &#39;-5&#39;, &#39;-99&#39;, &#39;0&#39;, &#39;-1&#39;, &#39;5&#39;, &#39;-5&#39;, &#39;0&#39;, &#39;3&#39;, &#39;3&#39;, &#39;-1&#39;, &#39;3&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;-1&#39;, &#39;5&#39;, &#39;3&#39;, &#39;-99&#39;, &#39;-3&#39;], &#39;no missing&#39;: [-5, -1, 4, -3, -4, 5, -3, -1, -4, 2, 1, 4, -5, -1, -1, -1, -2, 4, -1, -1, 4, 0, -1, 0, -4, 4, 0, 0, -3, 4, -2, 0, -5, 1, 3, -2, 5, -2, -4, -3, 4, -5, 5, -1, -2, -1, 0, 5, 0, 1, 3, 2, 2, -1, 4, 1, 1, -5, -4, -2, 2, -3, 0, -2, 0, -2, 3, 4, -1, 3, 4, 1, -4, 1, 2, -5, 0, -1, 5, -5, 0, 3, 3, -1, 3, -1, -1, -1, 5, 3, -3]}
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you want more practice, check out the following <a class="reference external" href="https://www.practicepython.org/">link</a>. You can also google “python exercises beginner” to find many more links (e.g. here’s another <a class="reference external" href="https://www.w3resource.com/python-exercises/">one</a>).</p>
 </div>
 
     <script type="text/x-thebe-config">
