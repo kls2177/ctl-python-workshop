@@ -1,6 +1,10 @@
 # Module 1: Basic Python (Part I)
 
-This notebook reviews the fundamentals of python. Follow along in your own blank jupyter notebook or click on the "Live Code/Launch Thebe" button in the upper right corner.
+In Part I, we will cover the fundamentals of python. Note that this is workshop is not exhaustive, but it will provide you with a useful introduction. There aren many, **many**, python tutorials, courses, etc. online, so if you are interested in learning more, a quick google search is all you need do.
+
+Most of the output on this webpage is hidden in order to give you the opportunity to think the code through before you click to reveal the output. 
+
+Follow along in your own blank jupyter notebook or click on the "Live Code/Launch Thebe" button in the upper right corner.
 
 Let's start with a simple hello world program (just as we did in the video).
 

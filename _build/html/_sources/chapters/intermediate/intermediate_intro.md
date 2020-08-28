@@ -1,13 +1,25 @@
-Introduction
+Intermediate Python
 =======================
 
-(under construction)
+In the last module we covered:
 
-The goal of this book is to provide upper year undergraduate and graduate students with a working knowledge of the data analysis concepts and tools most commonly used in climate science and geophysics.
+* using the Python interpreter, open by typing python
+* working in Jupyter Notebooks
+* arithmetic operations: + - * / ** // %.
+* conditionals: if(expression), elif, else
+* loops: while, for
+* lists, tuples and dictionaries
+* functions
 
-**Note:** This book is not the course website for [EES1132][ees1132]/[EESD21][eesd21] at the [University of Toronto Scarborough][utsc]. For all relevant course information please refer to [Quercus][q].
+In Module 2, we will explore using the [NumPy][numpy] and [Matplotlib][plt] packages.
 
-[ees1132]: https://www.utsc.utoronto.ca/gradpes/ees1132h-climate-data-analysis
-[eesd21]:https://www.utsc.utoronto.ca/gradpes/ees1132h-climate-data-analysis
-[utsc]: https://www.utsc.utoronto.ca/home/
-[q]: http://q.utoronto.ca
+NumPy is a Python package that provides more functionality than the vanilla Python. Matplotlib is a Python package for plotting and data visualization. These two packages are the foundation of scientific computing in Python.
+
+So, why do we need NumPy? Let's take a look at an example in the video below.
+
+Once you have watched the video, you can launch your own blank jupyter notebook and follow along.
+
+###Let's get started!
+
+[numpy]: https://numpy.org/
+[plt]: https://matplotlib.org/
