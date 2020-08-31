@@ -10,7 +10,7 @@ Alternatively, you can simply interact with the code using the "Live Code/Launch
 
 ```{figure} livecode.png
 ---
-height: 150px
+scale: 150%
 name: livecode
 ---
 Run Live Code!

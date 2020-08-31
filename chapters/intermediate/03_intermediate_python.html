@@ -1,13 +1,29 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Module 2, Part III: Working with Real Data &#8212; Basic and Intermediate Python</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../../_static/css/index.css" rel="stylesheet">
+    <title>Part III: Working with Real Data &#8212; Basic and Intermediate Python</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -15,6 +31,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -40,16 +59,18 @@
     <link rel="canonical" href="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/03_intermediate_python.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Exercises: Part III" href="03_intermediate_exercises.html" />
+    <link rel="prev" title="Part II: Matplotlib" href="02_intermediate_python.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/03_intermediate_python.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Module 2, Part III: Working with Real Data" />
-<meta property="og:description" content="Module 2, Part III: Working with Real Data  We have learned a lot about programming in python - the syntax and the functionality - but, for the most part, we ha" />
+<meta property="og:title"       content="Part III: Working with Real Data" />
+<meta property="og:description" content="Part III: Working with Real Data  We have learned a lot about programming in python - the syntax and the functionality - but, for the most part, we have been us" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -88,21 +109,51 @@
   </a>
  </li>
 </ul>
-<ul class="nav sidenav_l1">
+<ul class="current nav sidenav_l1">
  <li class="toctree-l1">
   <a class="reference internal" href="../introduction/intro.html">
    Introduction
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="../basic/beginner_intro.html">
-   Basic Python
+  <a class="reference internal" href="../basic/basic_intro.html">
+   Module 1: Basic Python
   </a>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active">
   <a class="reference internal" href="intermediate_intro.html">
-   Intermediate Python
+   Module 2: Intermediate Python
   </a>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_intermediate_python.html">
+     Part I: NumPy
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="01_intermediate_exercises.html">
+     Exercises: Part I
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02_intermediate_python.html">
+     Part II: Matplotlib
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Part III: Working with
+     <em>
+      Real Data
+     </em>
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03_intermediate_exercises.html">
+     Exercises: Part III
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -238,14 +289,14 @@
         
               <div>
                 
-  <div class="section" id="module-2-part-iii-working-with-real-data">
-<h1>Module 2, Part III: Working with <em>Real Data</em><a class="headerlink" href="#module-2-part-iii-working-with-real-data" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="part-iii-working-with-real-data">
+<h1>Part III: Working with <em>Real Data</em><a class="headerlink" href="#part-iii-working-with-real-data" title="Permalink to this headline">¶</a></h1>
 <p>We have learned a lot about programming in python - the syntax and the functionality - but, for the most part, we have been using fairly simple examples and data sets. So, let’s now take a look at how we might use python to work with some real data.</p>
-<p>Download the following from … and save it in the same directory that you are working in. The data we will be working with is ocean temperature, salinity, and pressure from an <a class="reference external" href="https://argo.ucsd.edu/">Argo float</a>.</p>
+<p>Download the following <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/argo_float_4901412.npz?raw=true">file</a> and save it in the same directory that you are working in. The data we will be working with is ocean temperature, salinity, and pressure from an <a class="reference external" href="https://argo.ucsd.edu/">Argo float</a>.</p>
 <p>Argo floats are amazing! They are autonomous floats that drift and dive throughout the ocean (see <a class="reference internal" href="#argo"><span class="std std-ref">Figure</span></a>) relaying information about temperature and salinity to satellites.</p>
 <div class="figure align-default" id="argo">
-<a class="reference internal image-reference" href="../../_images/argo.png"><img alt="../../_images/argo.png" src="../../_images/argo.png" style="width: 2807.2000000000003px; height: 1984.8000000000002px;" /></a>
-<p class="caption"><span class="caption-text">Map of the position of operational Argo floats as of July 2020.</span><a class="headerlink" href="#argo" title="Permalink to this image">¶</a></p>
+<a class="reference internal image-reference" href="../../_images/argo.png"><img alt="../../_images/argo.png" src="../../_images/argo.png" style="width: 877.25px; height: 620.25px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Map of the position of operational Argo floats as of July 2020.</span><a class="headerlink" href="#argo" title="Permalink to this image">¶</a></p>
 </div>
 <div class="section" id="load-the-data">
 <h2>1. Load the Data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h2>
@@ -329,25 +380,17 @@
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shape of array in &#39;levels&#39; category</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;levels&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
+
+<span class="c1"># So, it looks like one of the dimensions corresponds to the number of pressure levels (i.e., the depth of the float).</span>
+<span class="c1"># Let&#39;s take a closer look. What does `levels` look like?</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;levels&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(78,)
-</pre></div>
-</div>
-</div>
-</div>
-<p>So, it looks like one of the dimensions corresponds to the number of pressure levels (i.e., the depth of the float).</p>
-<p>Let’s take a closer look. What does <code class="docutils literal notranslate"><span class="pre">levels</span></code> look like?</p>
-<div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;levels&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
+[ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
  24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47
  48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71
  72 73 74 75 76 77]
@@ -355,31 +398,24 @@
 </div>
 </div>
 </div>
-<p>We see that we simply have a set of consecutively numbered levels.</p>
-<p>What about the other dimension?</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shape of array in &#39;date&#39;</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># We see that we simply have a set of consecutively numbered levels.</span>
+<span class="c1"># What about the other dimension? </span>
+
+<span class="c1"># Shape of array in &#39;date&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(75,)
-</pre></div>
-</div>
-</div>
-</div>
-<p>The other dimension corresponds to <code class="docutils literal notranslate"><span class="pre">date</span></code>!</p>
-<div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># data in &#39;date&#39;</span>
+
+<span class="c1"># The other dimension corresponds to `date`!</span>
+
+<span class="c1"># data in &#39;date&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;2012-07-13T22:33:06.019200000&#39; &#39;2012-07-23T22:54:59.990400000&#39;
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>(75,)
+[&#39;2012-07-13T22:33:06.019200000&#39; &#39;2012-07-23T22:54:59.990400000&#39;
  &#39;2012-08-02T22:55:52.003200000&#39; &#39;2012-08-12T23:08:59.971200000&#39;
  &#39;2012-08-22T23:29:01.968000000&#39; &#39;2012-09-01T23:17:38.976000000&#39;
  &#39;2012-09-12T02:59:18.960000000&#39; &#39;2012-09-21T23:18:37.036800000&#39;
@@ -421,11 +457,13 @@
 </div>
 </div>
 </div>
-<p>Looking at the dates, we see that data is collected every 20 days.</p>
-<p>Finally, what are the dimensions of the remaining variables?</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape of remaining variables</span>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looking at the dates, we see that data is collected every 20 days.</span>
+
+<span class="c1"># Finally, what are the dimensions of the remaining variables?</span>
+
+<span class="c1"># shape of remaining variables</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;S&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;P&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;lat&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -628,7 +666,7 @@ nan
 <div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0,0.5,&#39;psu&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/03_intermediate_python_39_1.png" src="../../_images/03_intermediate_python_39_1.png" />
+<img alt="../../_images/03_intermediate_python_33_1.png" src="../../_images/03_intermediate_python_33_1.png" />
 </div>
 </div>
 <p>Do you see the seasonal cycle in the surface temperature data? Cool!</p>
@@ -641,10 +679,10 @@ nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ffe97d2bdd8&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7ff009e28da0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/03_intermediate_python_41_1.png" src="../../_images/03_intermediate_python_41_1.png" />
+<img alt="../../_images/03_intermediate_python_35_1.png" src="../../_images/03_intermediate_python_35_1.png" />
 </div>
 </div>
 <div class="section" id="more-plotting-options">
@@ -683,7 +721,7 @@ nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03_intermediate_python_43_0.png" src="../../_images/03_intermediate_python_43_0.png" />
+<img alt="../../_images/03_intermediate_python_37_0.png" src="../../_images/03_intermediate_python_37_0.png" />
 </div>
 </div>
 </div>
@@ -692,8 +730,8 @@ nan
 <h2>4. Simple Statistical Analysis<a class="headerlink" href="#simple-statistical-analysis" title="Permalink to this headline">¶</a></h2>
 <p>Finally, let’s do a bit of statistical analysis of our data. NumPy has several <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">statistical functions</a> that we can use.</p>
 <p>Let’s see whether there is a clear relationship between latitude and surface salinity, i.e. does the surface salinity change as the float travels northward?</p>
-<p>To investigate this, let’s first do a scatter plot of these two variabiles.</p>
-<div class="cell docutils container">
+<p>To investigate this, let’s first do a scatter plot of these two variabiles. Try on your own first.</p>
+<div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with title, labels and color bar</span>
 
@@ -715,11 +753,15 @@ nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03_intermediate_python_45_0.png" src="../../_images/03_intermediate_python_45_0.png" />
+<img alt="../../_images/03_intermediate_python_39_0.png" src="../../_images/03_intermediate_python_39_0.png" />
 </div>
 </div>
 <p>Looks like there is a fairly linear relationship between latitude and surface salinity with salinity decreasing the further north the float travels.</p>
-<p>Let’s fit a line to this relationship using <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.polyval()</span></code>. There</p>
+<p>Let’s fit a line to this relationship using <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.polyval()</span></code>.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">np.polyfit(x,y,n)</span></code> takes in the predictor (<code class="docutils literal notranslate"><span class="pre">x</span></code>), predictand (<code class="docutils literal notranslate"><span class="pre">y</span></code>) and fits a polynomial of degree-<code class="docutils literal notranslate"><span class="pre">n</span></code>. A straight line is a polynomial of degree-1. The output of this function are the coefficients of the fit (<code class="docutils literal notranslate"><span class="pre">a</span></code>).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">np.polyval(a,x)</span></code> takes in the coefficients of the fit (<code class="docutils literal notranslate"><span class="pre">a</span></code>) and the predictor (<code class="docutils literal notranslate"><span class="pre">x</span></code>) and outputs the new fitted <code class="docutils literal notranslate"><span class="pre">y</span></code> values.</p></li>
+</ul>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fit a line (note: we will use np.ma.polyfit because S is a masked array)</span>
@@ -792,7 +834,7 @@ nan
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/03_intermediate_python_53_0.png" src="../../_images/03_intermediate_python_53_0.png" />
+<img alt="../../_images/03_intermediate_python_47_0.png" src="../../_images/03_intermediate_python_47_0.png" />
 </div>
 </div>
 <p>This is just a quick sampling of what you can do with NumPy. More sophisticated statistical and numerical analysis can be done with other Python packages, such as <a class="reference external" href="https://www.scipy.org/">SciPy</a> and <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a>.</p>
@@ -828,6 +870,8 @@ nan
     
     <div class='prev-next-bottom'>
         
+    <a class='left-prev' id="prev-link" href="02_intermediate_python.html" title="previous page">Part II: Matplotlib</a>
+    <a class='right-next' id="next-link" href="03_intermediate_exercises.html" title="next page">Exercises: Part III</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
@@ -846,7 +890,10 @@ nan
       </div>
     </div>
 
-    <script src="../../_static/js/index.js"></script>
+    
+  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
     
   </body>
 </html>
