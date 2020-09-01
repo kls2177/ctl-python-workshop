@@ -59,6 +59,7 @@
     <link rel="canonical" href="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/03_intermediate_exercises.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Reflection" href="reflection.html" />
     <link rel="prev" title="Part III: Working with Real Data" href="03_intermediate_python.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -150,6 +151,11 @@
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      Exercises: Part III
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="reflection.html">
+     Reflection
     </a>
    </li>
   </ul>
@@ -417,7 +423,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f92f3d33cc0&gt;]
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8182d32cc0&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_12_1.png" src="../../_images/03_intermediate_exercises_12_1.png" />
@@ -484,7 +490,7 @@
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define years with September data</span>
-<span class="n">year_sept</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">year</span><span class="p">)[</span><span class="mi">1</span><span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">year_sept</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="n">month</span> <span class="o">==</span> <span class="mi">9</span><span class="p">]</span>
 
 <span class="c1"># Plot sea ice extent (SIE) time series</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
@@ -550,7 +556,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f92f45396d8&gt;
+<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8183302fd0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_24_1.png" src="../../_images/03_intermediate_exercises_24_1.png" />
@@ -594,6 +600,7 @@
     <div class='prev-next-bottom'>
         
     <a class='left-prev' id="prev-link" href="03_intermediate_python.html" title="previous page">Part III: Working with <em>Real Data</em></a>
+    <a class='right-next' id="next-link" href="reflection.html" title="next page">Reflection</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
