@@ -1,4 +1,4 @@
-# Module 2, Part II: Matplotlib
+# Part II: Matplotlib
 
 ## 3. Matplotlib
 [Matplotlib](https://matplotlib.org) is the most popular plotting library for Python. 
@@ -123,5 +123,3 @@ plt.pcolormesh(mesh.T)
 > You can find the full NumPy reference here: https://docs.scipy.org/doc/numpy-1.13.0/reference/index.html
 
 We will take a look at some other plotting options in the next exercise.
-
-## REAL DATA!

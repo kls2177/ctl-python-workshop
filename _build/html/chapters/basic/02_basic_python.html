@@ -1,13 +1,29 @@
 
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta charset="utf-8" />
-    <title>Module 1: Basic Python (Part II) &#8212; Basic and Intermediate Python</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css" integrity="sha384-KA6wR/X5RY4zFAHpv/CnoG2UW1uogYfdnP67Uv7eULvTveboZJg0qUpmJZb5VqzN" crossorigin="anonymous">
-    <link href="../../_static/css/index.css" rel="stylesheet">
+    <title>Part II: Loops, Data Structures and Functions &#8212; Basic and Intermediate Python</title>
+    
+  <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
     <link rel="stylesheet" href="../../_static/sphinx-book-theme.css" type="text/css" />
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
@@ -15,6 +31,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
+
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -43,15 +62,15 @@
     <link rel="next" title="Exercises: Part II" href="02_basic_exercises.html" />
     <link rel="prev" title="Exercises: Part I" href="01_basic_exercises.html" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="docsearch:language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
 <meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/basic/02_basic_python.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Module 1: Basic Python (Part II)" />
-<meta property="og:description" content="Module 1: Basic Python (Part II)  In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about python-specific data str" />
+<meta property="og:title"       content="Part II: Loops, Data Structures and Functions" />
+<meta property="og:description" content="Part II: Loops, Data Structures and Functions  In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about python-spec" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -97,13 +116,13 @@
   </a>
  </li>
  <li class="toctree-l1 current active">
-  <a class="reference internal" href="beginner_intro.html">
-   Basic Python
+  <a class="reference internal" href="basic_intro.html">
+   Module 1: Basic Python
   </a>
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="01_basic_python.html">
-     Module 1: Basic Python (Part I)
+     Part I: Introduction to Programming in Python
     </a>
    </li>
    <li class="toctree-l2">
@@ -113,7 +132,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Module 1: Basic Python (Part II)
+     Part II: Loops, Data Structures and Functions
     </a>
    </li>
    <li class="toctree-l2">
@@ -125,7 +144,7 @@
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../intermediate/intermediate_intro.html">
-   Intermediate Python
+   Module 2: Intermediate Python
   </a>
  </li>
 </ul>
@@ -306,8 +325,8 @@
         
               <div>
                 
-  <div class="section" id="module-1-basic-python-part-ii">
-<h1>Module 1: Basic Python (Part II)<a class="headerlink" href="#module-1-basic-python-part-ii" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="part-ii-loops-data-structures-and-functions">
+<h1>Part II: Loops, Data Structures and Functions<a class="headerlink" href="#part-ii-loops-data-structures-and-functions" title="Permalink to this headline">¶</a></h1>
 <p>In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about python-specific <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">data structures</a>.</p>
 <div class="section" id="loops">
 <h2>5. Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
@@ -820,10 +839,7 @@ hi
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>name
-</pre></div>
-</div>
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span> Jun
+<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>name Jun
 age 20
 True yes
 4 5
@@ -1003,7 +1019,10 @@ False (7, 8)
       </div>
     </div>
 
-    <script src="../../_static/js/index.js"></script>
+    
+  <script src="../../_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
     
   </body>
 </html>

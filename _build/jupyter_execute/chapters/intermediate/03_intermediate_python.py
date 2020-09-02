@@ -1,14 +1,14 @@
-# Module 2, Part III: Working with *Real Data*
+# Part III: Working with *Real Data*
 
 We have learned a lot about programming in python - the syntax and the functionality - but, for the most part, we have been using fairly simple examples and data sets. So, let's now take a look at how we might use python to work with some real data.
 
-Download the following from ... and save it in the same directory that you are working in. The data we will be working with is ocean temperature, salinity, and pressure from an [Argo float](https://argo.ucsd.edu/).
+Download the following [file](https://github.com/kls2177/ccia_files/blob/master/argo_float_4901412.npz?raw=true) and save it in the same directory that you are working in. The data we will be working with is ocean temperature, salinity, and pressure from an [Argo float](https://argo.ucsd.edu/).
 
 Argo floats are amazing! They are autonomous floats that drift and dive throughout the ocean (see [Figure](argo)) relaying information about temperature and salinity to satellites. 
 
 ```{figure} argo.png
 ---
-scale: 80%
+scale: 25%
 name: argo
 ---
 Map of the position of operational Argo floats as of July 2020.
@@ -49,27 +49,25 @@ Ok, it looks like we have a 2-D array. What do those two dimensions correspond t
 # Shape of array in 'levels' category
 print(argo['levels'].shape)
 
-So, it looks like one of the dimensions corresponds to the number of pressure levels (i.e., the depth of the float).
-
-Let's take a closer look. What does `levels` look like?
+# So, it looks like one of the dimensions corresponds to the number of pressure levels (i.e., the depth of the float).
+# Let's take a closer look. What does `levels` look like?
 
 print(argo['levels'])
 
-We see that we simply have a set of consecutively numbered levels.
-
-What about the other dimension? 
+# We see that we simply have a set of consecutively numbered levels.
+# What about the other dimension? 
 
 # Shape of array in 'date'
 print(argo['date'].shape)
 
-The other dimension corresponds to `date`!
+# The other dimension corresponds to `date`!
 
 # data in 'date'
 print(argo['date'])
 
-Looking at the dates, we see that data is collected every 20 days.
+# Looking at the dates, we see that data is collected every 20 days.
 
-Finally, what are the dimensions of the remaining variables?
+# Finally, what are the dimensions of the remaining variables?
 
 # shape of remaining variables
 print(argo['S'].shape)
@@ -216,7 +214,7 @@ Finally, let's do a bit of statistical analysis of our data. NumPy has several [
 
 Let's see whether there is a clear relationship between latitude and surface salinity, i.e. does the surface salinity change as the float travels northward? 
 
-To investigate this, let's first do a scatter plot of these two variabiles.
+To investigate this, let's first do a scatter plot of these two variabiles. Try on your own first.
 
 # Plot with title, labels and color bar
 
@@ -237,7 +235,10 @@ plt.show()
 
 Looks like there is a fairly linear relationship between latitude and surface salinity with salinity decreasing the further north the float travels.
 
-Let's fit a line to this relationship using `np.polyfit()` and `np.polyval()`. There 
+Let's fit a line to this relationship using `np.polyfit()` and `np.polyval()`. 
+
+* `np.polyfit(x,y,n)` takes in the predictor (`x`), predictand (`y`) and fits a polynomial of degree-`n`. A straight line is a polynomial of degree-1. The output of this function are the coefficients of the fit (`a`).
+* `np.polyval(a,x)` takes in the coefficients of the fit (`a`) and the predictor (`x`) and outputs the new fitted `y` values.
 
 # Fit a line (note: we will use np.ma.polyfit because S is a masked array)
 
@@ -288,4 +289,3 @@ plt.show()
 This is just a quick sampling of what you can do with NumPy. More sophisticated statistical and numerical analysis can be done with other Python packages, such as [SciPy](https://www.scipy.org/) and [statsmodels](https://www.statsmodels.org/stable/index.html).
 
 Now, it's your turn to try some simple plotting and analysis.
-

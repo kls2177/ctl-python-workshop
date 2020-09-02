@@ -1,16 +1,16 @@
-# Module 1: Basic Python (Part I)
+# Part I: Introduction to Programming in Python
 
 In Part I, we will cover the fundamentals of python. Note that this is workshop is not exhaustive, but it will provide you with a useful introduction. There aren many, **many**, python tutorials, courses, etc. online, so if you are interested in learning more, a quick google search is all you need do.
 
-Most of the output on this webpage is hidden in order to give you the opportunity to think the code through before you click to reveal the output. 
+Most of the output on this webpage is *hidden* in order to give you the opportunity to think the code through before you click to reveal the output. And remember, <font color=green>***press Shift-Enter to run the code***</font>.
 
-Follow along in your own blank jupyter notebook or click on the "Live Code/Launch Thebe" button in the upper right corner.
+Follow along in your own blank jupyter notebook or click on the "Live Code/Launch Thebe" button in the upper right corner. **It takes a few minutes for the "Live Code" session to launch**.
 
-Let's start with a simple hello world program (just as we did in the video).
+Let's start with a simple hello world program (just as we did in the video). 
 
 Note that `#` followed by text is a **comment**. The `#` sympbol tells python not to interpret this line as code.
 
-# Type your code below
+# this is a comment
 print("Hello World!")
 
 Note that the syntax matters. What happens if you instead try the following:
@@ -19,12 +19,11 @@ Note that the syntax matters. What happens if you instead try the following:
 - print(“Hello World)
 - print “Hello World”
 
-`print()` is one of the built-in functions that are always available when you use python. Functions are followed by parenthesis. 
-
-Here are all the [built-in functions](https://docs.python.org/3/library/functions.html).
+`print()` is one of the built-in functions that are always available when you use python. Functions are followed by parenthesis. Here are all the [built-in functions](https://docs.python.org/3/library/functions.html).
 
 To learn more about a particular function, type `help()`
 
+# information about print()
 help(print)
 
 ## 1. Operations: Python as a *calculator*

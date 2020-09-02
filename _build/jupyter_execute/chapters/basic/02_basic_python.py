@@ -1,4 +1,4 @@
-# Module 1: Basic Python (Part II)
+# Part II: Loops, Data Structures and Functions
 
 In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about python-specific [data structures](https://docs.python.org/3/tutorial/datastructures.html). 
 

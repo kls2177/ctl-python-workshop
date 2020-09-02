@@ -1,6 +1,8 @@
-# Module 2, Part I: NumPy
+# Part I: NumPy
 
-## Last Session
+## Review of Module 1
+
+Take a few minutes to review the content of Module 1. Module 2 builds on what was covered in Module 1.
 
 * To open a Python interpreter, type `python` in terminal.
 * Arithmetic operations:
@@ -20,7 +22,7 @@
     * `for`
 * Some types are not compatible with each other.
     * `1+ "123"` is invalid.
-* To declare an array
+* To declare a list
     * `a = [1,2,3]`
 * To declare a dictionary
     * `d = {"name": "Student"}`
@@ -250,7 +252,3 @@ And it .
 ![](https://www.evernote.com/l/Aq1F-XUu2GtKVLD1aBhxoDniSfD43QHbyooB/image.png)
 
 > If you wish to learn more, follow this link: http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc
-
-## Break
-https://goo.gl/forms/m4vcs0RtPAVZawX93
-
