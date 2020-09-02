@@ -12,10 +12,15 @@ This workshop introduces participants to Python programming, and simple analysis
 ## Format
 The workshop is presented online via two asynchronous, interactive modules. Laptops and an internet connection are required.
 
-In the first module, the focus will be on introductory programming concepts, and Python-specific syntax and usage. The second module will focus on simple data analysis and visualization, specifically using the Python packages [numpy][numpy], [scipy][scipy] and [matplotlib][plt].
+In the first module, the focus will be on introductory programming concepts, and Python-specific syntax and usage. The second module will focus on simple data analysis and visualization, specifically using the Python packages [numpy][numpy] and [matplotlib][plt].
+
+To receive a **GPS credit** for this workshop, students must complete the reflection at the end of the second module.
 
 [python]: https://www.python.org/
 [scipycomp]: https://www.scipy.org/about.html
 [numpy]: https://numpy.org/
-[scipy]: https://www.scipy.org/
 [plt]: https://matplotlib.org/
+
+```python
+
+```
