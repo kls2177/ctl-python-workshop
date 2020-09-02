@@ -14,14 +14,15 @@ In Module 2, we will explore using the [NumPy](https://numpy.org/) and [Matplotl
 
 NumPy is a Python package that provides more functionality than the vanilla Python. Matplotlib is a Python package for plotting and data visualization. These two packages are the foundation of scientific computing in Python.
 
-So, why do we need NumPy? Let's take a look at an example in the video below. Once you have watched the video, you can launch your own blank jupyter notebook and follow along.
+So, why do we need NumPy? Let's take a look at an example in the video below. 
+
+from IPython.display import IFrame
+ 
+IFrame("https://play.library.utoronto.ca/embed/07158a48e178876ba88a21a10a574fff", width="560",height="315")
+
+Once you have watched the video, you can launch your own blank jupyter notebook and follow along.
 
 ### Let's get started!
-
-from IPython.display import HTML
-
- 
-HTML('<iframe width="560" height="315" src="https://play.library.utoronto.ca/embed/07158a48e178876ba88a21a10a574fff" frameborder="0" allowfullscreen />')
 
 
 

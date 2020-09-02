@@ -1,6 +1,6 @@
 # Module 1: Basic Python
 
-> “The computer is incredibly fast, accurate, and stupid. Man is incredibly slow, inaccurate, and brilliant.”
+> “The computer is incredibly fast, accurate, and stupid. Man is incredibly slow, inaccurate, and brilliant.”\
 > –Leo Cherne
 
 In this module, we will cover the fundamentals of python. Much of this content can be found in the [official python tutorial](https://docs.python.org/3/tutorial/), Copyright 2001-2019, Python Software Foundation. It is used here under the terms of the [Python License](https://docs.python.org/3/license.html).
@@ -15,13 +15,15 @@ There are three main ways to use python:
 
 In this course, we will mostly be interacting with python via jupyter notebooks.
 
-The following video demonstrates the three different modes of interaction. Once you have watched the video, you can launch your own blank jupyter notebook and follow along.
+The following video demonstrates the three different modes of interaction. 
+
+from IPython.display import IFrame
+ 
+IFrame("https://play.library.utoronto.ca/embed/b66495e1323c728b31158b5df5615490", width="560",height="315")
+
+Once you have watched the video, you can launch your own blank jupyter notebook and follow along.
 
 ### Let's get started!
-
-from IPython.display import HTML
- 
-HTML('<iframe width="560" height="315" src="https://play.library.utoronto.ca/embed/b66495e1323c728b31158b5df5615490" frameborder="0" allowfullscreen />')
 
 
 
