@@ -20,7 +20,3 @@ To receive a **GPS credit** for this workshop, students must complete the reflec
 [scipycomp]: https://www.scipy.org/about.html
 [numpy]: https://numpy.org/
 [plt]: https://matplotlib.org/
-
-```python
-
-```
