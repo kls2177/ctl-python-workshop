@@ -13,7 +13,7 @@ Alternatively, you can simply interact with the code using the "Live Code/Launch
 scale: 150%
 name: livecode
 ---
-Run Live Code!
+Look for this "Live Code" button on the module pages to interact with the code via Thebe and binder.
 ```
 
 [jupyter]: https://jupyter.org/
