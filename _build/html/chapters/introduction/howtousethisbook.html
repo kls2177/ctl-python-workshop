@@ -1,9 +1,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>How to use this book &#8212; Basic and Intermediate Python</title>
     
   <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
@@ -30,12 +31,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -43,12 +44,10 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -70,7 +69,7 @@
 <meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/introduction/howtousethisbook.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="How to use this book" />
-<meta property="og:description" content="How to use this book  This website uses jupyter notebooks to display python code and it uses [binder][https://mybinder.org/] and Thebe to allow for users to int" />
+<meta property="og:description" content="How to use this book  This website uses jupyter notebooks to display python code and it uses [binder][https://mybinder.org/] and Thebe to allow users to interac" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -203,7 +202,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             
@@ -217,13 +216,13 @@
                 
   <div class="section" id="how-to-use-this-book">
 <h1>How to use this book<a class="headerlink" href="#how-to-use-this-book" title="Permalink to this headline">¶</a></h1>
-<p>This website uses <a class="reference external" href="https://jupyter.org/">jupyter notebooks</a> to display python code and it uses [binder][https://mybinder.org/] and <a class="reference external" href="https://thebe.readthedocs.io/en/latest/index.html">Thebe</a> to allow for users to interact with the code.</p>
-<p>There are two approaches to coding in this course. The first and recommended is to install your own copy of python on your laptop of computer and a follow along with the course. You are able to copy and past the python code into your own jupyter notebook and then interact with it yourself.</p>
+<p>This website uses <a class="reference external" href="https://jupyter.org/">jupyter notebooks</a> to display python code and it uses [binder][https://mybinder.org/] and <a class="reference external" href="https://thebe.readthedocs.io/en/latest/index.html">Thebe</a> to allow users to interact with the code.</p>
+<p>There are two approaches to coding in this workshop. The first and recommended is to install your own copy of python on your laptop or desktop computer and to follow along with the workshop. You are able to copy and paste the python code into your own jupyter notebook and then interact with it yourself.</p>
 <p>I recommend installing python using the <a class="reference external" href="https://www.anaconda.com/">Anaconda distribution</a>. Follow the installation steps <a class="reference external" href="https://docs.anaconda.com/anaconda/install/">here</a>.</p>
 <p>Alternatively, you can simply interact with the code using the “Live Code/Launch Thebe” button in the upper right corner of the website.</p>
 <div class="figure align-default" id="livecode">
 <a class="reference internal image-reference" href="../../_images/livecode.png"><img alt="../../_images/livecode.png" src="../../_images/livecode.png" style="width: 49.5px; height: 37.5px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Run Live Code!</span><a class="headerlink" href="#livecode" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 1 </span><span class="caption-text">Look for this “Live Code” button on the module pages to interact with the code via Thebe and binder.</span><a class="headerlink" href="#livecode" title="Permalink to this image">¶</a></p>
 </div>
 </div>
 

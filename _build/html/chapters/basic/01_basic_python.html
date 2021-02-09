@@ -1,9 +1,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Part I: Introduction to Programming in Python &#8212; Basic and Intermediate Python</title>
     
   <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
@@ -30,12 +31,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -43,12 +44,10 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -221,6 +220,11 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/kls2177/ctl-python-workshop/blob/master/chapters/basic/01_basic_python.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
@@ -233,7 +237,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -315,13 +319,13 @@
 <p>Note that <code class="docutils literal notranslate"><span class="pre">#</span></code> followed by text is a <strong>comment</strong>. The <code class="docutils literal notranslate"><span class="pre">#</span></code> sympbol tells python not to interpret this line as code.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is a comment</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># this is a comment</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello World!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Hello World!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hello World!
 </pre></div>
 </div>
 </div>
@@ -336,13 +340,13 @@
 <p>To learn more about a particular function, type <code class="docutils literal notranslate"><span class="pre">help()</span></code></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># information about print()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># information about print()</span>
 <span class="n">help</span><span class="p">(</span><span class="nb">print</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function print in module builtins:
 
 print(...)
     print(value, ..., sep=&#39; &#39;, end=&#39;\n&#39;, file=sys.stdout, flush=False)
@@ -353,7 +357,6 @@ print(...)
     sep:   string inserted between values, default a space.
     end:   string appended after the last value, default a newline.
     flush: whether to forcibly flush the stream.
-
 </pre></div>
 </div>
 </div>
@@ -371,13 +374,13 @@ print(...)
 </ul>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Addition</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Addition</span>
 <span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -385,12 +388,12 @@ print(...)
 <p>Note that:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span><span class="o">+</span><span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -398,12 +401,12 @@ print(...)
 <p>is the same as</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -411,20 +414,20 @@ print(...)
 <p>Python ignores the white spaces.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplication</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Multiplication</span>
 <span class="mf">1.6</span><span class="o">*</span><span class="mf">7.8</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>12.48
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>12.48
 </pre></div>
 </div>
 </div>
 </div>
 <div class="section" id="order-of-operations">
 <h3>1.1 Order of Operations<a class="headerlink" href="#order-of-operations" title="Permalink to this headline">¶</a></h3>
-<p>Just like in high-school arithmetic, the order of operations matters. In python, the hierarchical order of operations (aka <a class="reference external" href="https://introcs.cs.princeton.edu/python/appendix_precedence/#:%7E:text=Python%20has%20well%2Ddefined%20rules,precedence%20than%20addition%20and%20subtraction.">precedence</a>) is as follows:</p>
+<p>Just like in high-school arithmetic, the order of operations matters. In python, the hierarchical order of operations (aka <a class="reference external" href="https://introcs.cs.princeton.edu/python/appendix_precedence/#:~:text=Python%20has%20well%2Ddefined%20rules,precedence%20than%20addition%20and%20subtraction.">precedence</a>) is as follows:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">()</span></code> Parentheses - Highest Precedence</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">**</span></code> Exponentiation</p></li>
@@ -437,13 +440,13 @@ print(...)
 <p>Order of operations matter! Try executing <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">+</span> <span class="pre">4</span> <span class="pre">*</span> <span class="pre">16</span></code>. Before you check the output - which operation will be performed first, based on the list above?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Order of Operations</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Order of Operations</span>
 <span class="mi">5</span> <span class="o">+</span> <span class="mi">4</span> <span class="o">*</span> <span class="mi">16</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>69
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>69
 </pre></div>
 </div>
 </div>
@@ -465,13 +468,13 @@ print(...)
 <p>Let’s take a look these different types. We will start with <code class="docutils literal notranslate"><span class="pre">type(10)</span></code>. What type do you think this is? (Note that <code class="docutils literal notranslate"><span class="pre">type()</span></code> is one of the built-in python functions.)</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display data type</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Display data type</span>
 <span class="nb">type</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>int
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
 </pre></div>
 </div>
 </div>
@@ -487,13 +490,13 @@ print(...)
 <p>This may seem silly - why would you want to add integers and strings anyway? But, this is actually quite a common issue that comes up. For example, suppose I entered some numeric measurements in a .csv file but I entered them as text rather than numbers. Then I read this .csv file in python and try to perform some arthimetic operations and I find I get a <code class="docutils literal notranslate"><span class="pre">TypeError</span></code>. I can avoid editing my .csv file by doing a <em>type conversion</em>.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding an integer and a string</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Adding an integer and a string</span>
 <span class="mi">1</span> <span class="o">+</span> <span class="nb">int</span><span class="p">(</span><span class="s2">&quot;2&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>3
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
 </pre></div>
 </div>
 </div>
@@ -513,7 +516,7 @@ print(...)
 <p>Introducing <strong>variables</strong>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variables</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Variables</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>         <span class="c1"># assign 1 to variable a</span>
 <span class="n">b</span> <span class="o">=</span> <span class="s2">&quot;hello&quot;</span>   <span class="c1"># assign &quot;hello&quot; to variable b</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">a</span> <span class="o">+</span> <span class="mi">20</span>    <span class="c1"># assign a + 20 to variable c</span>
@@ -522,7 +525,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>21
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>21
 </pre></div>
 </div>
 </div>
@@ -550,7 +553,7 @@ print(...)
 <p>Let’s try a simple conditional. Which output do you expect to get based on the input?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A simple conditional</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A simple conditional</span>
 <span class="n">have_homework</span> <span class="o">=</span> <span class="kc">True</span>   <span class="c1"># assign True to variable have_homework</span>
 <span class="k">if</span> <span class="n">have_homework</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Time to study!&quot;</span><span class="p">)</span>
@@ -560,7 +563,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Time to study!
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time to study!
 </pre></div>
 </div>
 </div>
@@ -583,13 +586,13 @@ print(...)
 <p>Here is a simple example.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparator</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comparator</span>
 <span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -617,7 +620,7 @@ print(...)
 <p>Let’s take a look how these work.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Logical operators</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Logical operators</span>
 <span class="n">have_homework</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">need_sleep</span> <span class="o">=</span> <span class="kc">True</span>
 
@@ -627,7 +630,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>True
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -641,7 +644,7 @@ print(...)
 </ul>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A more complex conditional</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A more complex conditional</span>
 <span class="n">have_homework</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">hours_studied</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">if</span> <span class="n">hours_studied</span> <span class="o">&gt;</span> <span class="mi">4</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">have_homework</span><span class="p">:</span>
@@ -652,7 +655,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>Time to play
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Time to play
 </pre></div>
 </div>
 </div>
@@ -680,7 +683,7 @@ print(...)
 <p>Let’s see how this works by looking at another example of conditionals. Take a look at the example and figure out what the output will be, then check your answer.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two conditional</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Two conditional</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
@@ -700,7 +703,7 @@ print(...)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>a is 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is 10
 c,b,a are all True equivalents
 </pre></div>
 </div>
@@ -718,7 +721,7 @@ c,b,a are all True equivalents
 <p>You can also have nested conditional blocks of code. Here is an example.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># A nested conditional</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A nested conditional</span>
 <span class="n">a</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="n">b</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">c</span> <span class="o">=</span> <span class="mi">30</span>
@@ -741,7 +744,7 @@ c,b,a are all True equivalents
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>a is 10
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>a is 10
 c,b,a are all True equivalents
 c is also smaller than 40
 </pre></div>

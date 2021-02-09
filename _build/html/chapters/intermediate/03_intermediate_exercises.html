@@ -1,9 +1,10 @@
 
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
     <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Exercises: Part III &#8212; Basic and Intermediate Python</title>
     
   <link rel="stylesheet" href="../../_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
@@ -30,12 +31,12 @@
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/jupyter-sphinx.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
   <link rel="preload" as="script" href="../../_static/js/index.30270b6e4c972e43c488.js">
 
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/sphinx-book-theme.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/doctools.js"></script>
@@ -43,12 +44,10 @@
     <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/mystnb.js"></script>
     <script src="../../_static/sphinx-book-theme.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe,.cell"
@@ -234,6 +233,11 @@
         
         
         
+        <a class="colab-button" href="https://colab.research.google.com/github/kls2177/ctl-python-workshop/blob/master/chapters/intermediate/03_intermediate_exercises.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
         <button type="button" class="btn btn-secondary topbarbtn"
             onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
                 class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
@@ -246,7 +250,7 @@
     <!-- Table of contents -->
     <div class="d-none d-md-block col-md-2 bd-toc show">
         <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> On this page
+            <i class="fas fa-list"></i> Contents
         </div>
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
@@ -267,13 +271,13 @@
                 
   <div class="section" id="exercises-part-iii">
 <h1>Exercises: Part III<a class="headerlink" href="#exercises-part-iii" title="Permalink to this headline">¶</a></h1>
-<p>We are going to read in some real data again and do some simple plots and analysis. Let’s take a look at a daily sea ice extent time series from the <a class="reference external" href="https://nsidc.org/data/seaice_index/archives">National Snow and Ice Data Center</a>. Sea ice extent is measured in 10$^6$ km<span class="math notranslate nohighlight">\(^2\)</span>. You can download your own copy of the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/ice_month.csv.zip?raw=true">here</a>.</p>
+<p>We are going to read in some real data again and do some simple plots and analysis. Let’s take a look at a daily sea ice extent time series from the <a class="reference external" href="https://nsidc.org/data/seaice_index/archives">National Snow and Ice Data Center</a>. Sea ice extent is measured in 10<span class="math notranslate nohighlight">\(^6\)</span> km<span class="math notranslate nohighlight">\(^2\)</span>. You can download your own copy of the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/ice_month.csv.zip?raw=true">here</a>.</p>
 <p>The data consists of 3 columns: year, month and extent.</p>
 <p>Follow along in your own jupyter notebook.</p>
 <p>First, let’s load in NumPy and Matplotlib. See if you can remember the syntax without peeking :)</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
 </pre></div>
@@ -283,7 +287,7 @@
 <p>Next, we will load in the data. To load in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files in NumPy, we can use the <code class="docutils literal notranslate"><span class="pre">np.genfromtxt()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Arctic sea ice data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Arctic sea ice data</span>
 <span class="n">ice</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">genfromtxt</span><span class="p">(</span><span class="s1">&#39;ice_month.csv&#39;</span><span class="p">,</span><span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;,&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -292,13 +296,13 @@
 <p>I always like to take a look at my data before I do anything else. So, let’s take a look at the shape. Type out how you would find the shape of <code class="docutils literal notranslate"><span class="pre">ice</span></code>.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape of ice</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># shape of ice</span>
 <span class="n">ice</span><span class="o">.</span><span class="n">shape</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>(503, 3)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(503, 3)
 </pre></div>
 </div>
 </div>
@@ -312,7 +316,7 @@
 <p>Try to extract the year and month data on your own by slicing the <code class="docutils literal notranslate"><span class="pre">ice</span></code> array. Use the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ndarray.astype.html"><code class="docutils literal notranslate"><span class="pre">np.astype()</span></code> funtion</a> to convert the data type to integer. Click to reveal if you get stuck.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># time components</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># time components</span>
 <span class="n">year</span> <span class="o">=</span> <span class="n">ice</span><span class="p">[:,</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span> <span class="c1"># use .astype to convert the data type of an entire array</span>
 <span class="n">month</span> <span class="o">=</span> <span class="n">ice</span><span class="p">[:,</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="s1">&#39;int&#39;</span><span class="p">)</span>
 
@@ -325,7 +329,7 @@
 <p>Now, we will import the <code class="docutils literal notranslate"><span class="pre">datetime</span></code> package and create our <a class="reference external" href="https://numpy.org/doc/stable/reference/arrays.datetime.html">datetime object</a>.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="c1"># loop over the elements of our time components</span>
 <span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[M]&#39;</span><span class="p">)</span>
@@ -337,7 +341,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-none notranslate"><div class="highlight"><pre><span></span>[&#39;1978-10&#39; &#39;1978-11&#39; &#39;1978-12&#39; &#39;1979-01&#39; &#39;1979-02&#39; &#39;1979-03&#39; &#39;1979-04&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;1978-10&#39; &#39;1978-11&#39; &#39;1978-12&#39; &#39;1979-01&#39; &#39;1979-02&#39; &#39;1979-03&#39; &#39;1979-04&#39;
  &#39;1979-05&#39; &#39;1979-06&#39; &#39;1979-07&#39; &#39;1979-08&#39; &#39;1979-09&#39; &#39;1979-10&#39; &#39;1979-11&#39;
  &#39;1979-12&#39; &#39;1980-01&#39; &#39;1980-02&#39; &#39;1980-03&#39; &#39;1980-04&#39; &#39;1980-05&#39; &#39;1980-06&#39;
  &#39;1980-07&#39; &#39;1980-08&#39; &#39;1980-09&#39; &#39;1980-10&#39; &#39;1980-11&#39; &#39;1980-12&#39; &#39;1981-01&#39;
@@ -417,13 +421,13 @@
 <p>Now, let’s plot sea ice extent as a function of time. Try it on your own and make a simple time series plot.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a simple line plot</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Make a simple line plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">time</span><span class="p">,</span><span class="n">SIE</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f8182d32cc0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe5a0094f28&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_12_1.png" src="../../_images/03_intermediate_exercises_12_1.png" />
@@ -433,7 +437,7 @@
 <p>Sometimes <em>missing data</em> is identified with large (positive or negative) integers. This is exactly what is happening with this data set - missing data are flagged with a -9999 value. Try to use a masked array to deal with this issue. You might have to google masked arrays to find the right function.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># mask values that are less than zero (negative values are unphysical)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># mask values that are less than zero (negative values are unphysical)</span>
 <span class="n">SIE</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ma</span><span class="o">.</span><span class="n">masked_less</span><span class="p">(</span><span class="n">SIE</span><span class="p">,</span><span class="mf">0.0</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -442,7 +446,7 @@
 <p>We can now plot our masked sea ice extent as a function of time.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot sea ice extent (SIE) time series</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot sea ice extent (SIE) time series</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 
 <span class="c1"># change font size</span>
@@ -459,7 +463,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0.5,1,&#39;Arctic Sea Ice Extent&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Arctic Sea Ice Extent&#39;)
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_16_1.png" src="../../_images/03_intermediate_exercises_16_1.png" />
@@ -469,7 +473,7 @@
 <p>Use a loop and a conditional to extract the September data.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># loop and conditional to extract September data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># loop and conditional to extract September data</span>
 <span class="n">SIE_sept</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">SIE</span><span class="p">)):</span>
     <span class="k">if</span> <span class="n">month</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="mi">9</span><span class="p">:</span>
@@ -480,7 +484,7 @@
 </div>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here is an alternative way to do the above without a loop (there are so many cool short-cuts!)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here is an alternative way to do the above without a loop (there are so many cool short-cuts!)</span>
 <span class="n">SIE_sept</span> <span class="o">=</span> <span class="n">SIE</span><span class="p">[</span><span class="n">month</span> <span class="o">==</span> <span class="mi">9</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -489,7 +493,7 @@
 <p>Once you have only September data, make a time series plot of September Arctic SIE. You will need to define a new x-coordinate.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># define years with September data</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define years with September data</span>
 <span class="n">year_sept</span> <span class="o">=</span> <span class="n">year</span><span class="p">[</span><span class="n">month</span> <span class="o">==</span> <span class="mi">9</span><span class="p">]</span>
 
 <span class="c1"># Plot sea ice extent (SIE) time series</span>
@@ -508,16 +512,16 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>Text(0.5,1,&#39;September Arctic Sea Ice Extent&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;September Arctic Sea Ice Extent&#39;)
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_21_1.png" src="../../_images/03_intermediate_exercises_21_1.png" />
 </div>
 </div>
-<p>Now, let’s use the <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.polyval()</span></code> functions again and this time we will test out different polynomial fits. Try n = 1, 2 and 3 and add all of the fits to the plot above. Also add the slope of the n = 1 line in the legend in units of 10$^6$ km<span class="math notranslate nohighlight">\(^2\)</span> per <strong>decade</strong>.</p>
+<p>Now, let’s use the <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.polyval()</span></code> functions again and this time we will test out different polynomial fits. Try n = 1, 2 and 3 and add all of the fits to the plot above. Also add the slope of the n = 1 line in the legend in units of 10<span class="math notranslate nohighlight">\(^6\)</span> km<span class="math notranslate nohighlight">\(^2\)</span> per <strong>decade</strong>.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># polynomial fits</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># polynomial fits</span>
 
 <span class="c1"># n = 1</span>
 <span class="n">a1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">year_sept</span><span class="p">,</span><span class="n">SIE_sept</span><span class="p">,</span><span class="mi">1</span><span class="p">)</span>
@@ -536,7 +540,7 @@
 </div>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot sea ice extent (SIE) time series</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot sea ice extent (SIE) time series</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 
 <span class="c1"># change font size</span>
@@ -556,7 +560,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-none notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f8183302fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe5a0744f28&gt;
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_24_1.png" src="../../_images/03_intermediate_exercises_24_1.png" />
