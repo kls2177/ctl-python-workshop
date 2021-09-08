@@ -201,9 +201,9 @@ plt.title('September Arctic Sea Ice Extent')
 plt.legend(loc='upper right')
 
 
-# If you want to play around with this data set some more you can try the following:
-# * compare the magnitude of the trends in March (the Arctic SIE maximum) and September
-# * calculate the *R*-squared for the March and September trends
+# **To get GPS credit for this workshop and credit towards class participation in EES1132 and EES1133, please complete the following additional exercises:**
+# * plot the time series of March Arctic SIE (save this plot for upload using `plt.savefig()` (you may need to Google this). Compare the magnitude of the trends in March (the Arctic SIE maximum) and September.
+# * calculate the *R*-squared for the March and September trends (refer to the pervious exercise using the Argo data).
 # * compute the climatological (i.e., average over all years) seasonal cycle of SIE and plot it. This is a plot of SIE as a function of month. (Hint: Drop the years 1978 and 2020 (these are not complete years) and then use `np.reshape()` to create an array for SIE with two dimensions: (year,month). Next, calculate the mean over the appropriate dimension using `np.mean(...,axis=...)`.
 
 # In[ ]:
