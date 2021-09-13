@@ -1,6 +1,6 @@
 # How to use this book
 
-This website uses [jupyter notebooks][jupyter] to display python code and it uses [binder][https://mybinder.org/] and [Thebe][thebe] to allow users to interact with the code.
+This website uses [jupyter notebooks][jupyter] to display python code and it uses [binder][mybinder] and [Thebe][thebe] to allow users to interact with the code.
 
 There are three approaches to coding in this workshop. The first and recommended if you are planning on using python for much of your academics and research is to install your own copy of python on your laptop or desktop computer and to follow along with the workshop. You are able to copy and paste the python code into your own jupyter notebook and then interact with it yourself.
 
@@ -19,7 +19,7 @@ Look for this "Live Code" button on the module pages to interact with the code v
 ```
 
 [jupyter]: https://jupyter.org/
-[binder]: https://mybinder.org/
+[mybinder]: https://mybinder.org/
 [thebe]: https://thebe.readthedocs.io/en/latest/index.html
 [anaconda]: https://www.anaconda.com/
 [install]: https://docs.anaconda.com/anaconda/install/
