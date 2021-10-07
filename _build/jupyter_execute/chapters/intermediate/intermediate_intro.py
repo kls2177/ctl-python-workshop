@@ -24,7 +24,7 @@
 
 from IPython.display import IFrame
  
-IFrame("https://play.library.utoronto.ca/embed/07158a48e178876ba88a21a10a574fff", width="560",height="315")
+IFrame("https://web.microsoftstream.com/embed/video/fda5aba2-6eee-40cd-9593-53a89084996d?autoplay=false&showinfo=true", width="560",height="315")
 
 
 # Once you have watched the video, you can launch your own blank jupyter notebook and follow along.
