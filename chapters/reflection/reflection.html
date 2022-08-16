@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction &#8212; Basic and Intermediate Python</title>
+    <title>Workshop Submission and Reflection &#8212; Basic and Intermediate Python</title>
     
   <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
 
@@ -55,21 +55,20 @@
         const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/introduction/intro.html" />
+    <link rel="canonical" href="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/reflection/reflection.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="About this book" href="aboutthisbook.html" />
-    <link rel="prev" title="Basic and Intermediate Python" href="../index.html" />
+    <link rel="prev" title="Exercises: Part III" href="../intermediate/03_intermediate_exercises.html" />
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
 
 
 <!-- Opengraph tags -->
-<meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/introduction/intro.html" />
+<meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/reflection/reflection.html" />
 <meta property="og:type"        content="article" />
-<meta property="og:title"       content="Introduction" />
-<meta property="og:description" content="Introduction  What is Python?  Python is a powerful, open-source programming language for data wrangling, analysis and visualization. Python is becoming the pre" />
+<meta property="og:title"       content="Workshop Submission and Reflection" />
+<meta property="og:description" content="Workshop Submission and Reflection  I hope that this workshop has provided you with a useful overview of programming in Python. If you are interested in learnin" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -109,22 +108,10 @@
  </li>
 </ul>
 <ul class="current nav sidenav_l1">
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../introduction/intro.html">
    Introduction
   </a>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="aboutthisbook.html">
-     About this book
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="howtousethisbook.html">
-     How to use this book
-    </a>
-   </li>
-  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../basic/basic_intro.html">
@@ -136,8 +123,8 @@
    Module 2: Intermediate Python
   </a>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../reflection/reflection.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Workshop Submission and Reflection
   </a>
  </li>
@@ -183,9 +170,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/introduction/intro.md"><button type="button"
+        <a class="dropdown-buttons" href="../../_sources/chapters/reflection/reflection.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.md</button></a>
+                data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
             onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -203,6 +190,31 @@
 
         <!-- Launch buttons -->
 
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/kls2177/ctl-python-workshop/master?urlpath=tree/chapters/reflection/reflection.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/kls2177/ctl-python-workshop/blob/master/chapters/reflection/reflection.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
+        
+    </div>
+</div>
+
     </div>
 
     <!-- Table of contents -->
@@ -214,18 +226,8 @@
         <nav id="bd-toc-nav">
             <ul class="nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#what-is-python">
-   What is Python?
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#workshop-overview">
-   Workshop Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#format">
-   Format
+  <a class="reference internal nav-link" href="#happy-coding">
+   Happy coding!
   </a>
  </li>
 </ul>
@@ -239,23 +241,13 @@
         
               <div>
                 
-  <div class="section" id="introduction">
-<h1>Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="what-is-python">
-<h2>What is Python?<a class="headerlink" href="#what-is-python" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="https://www.python.org/">Python</a> is a powerful, open-source programming language for data wrangling, analysis and visualization. Python is becoming the preferred programming language for <a class="reference external" href="https://www.scipy.org/about.html">scientific computing</a> and, increasingly, implementations of new machine learning and artificial intelligence algorithms are being developed with Python.</p>
-</div>
-<div class="section" id="workshop-overview">
-<h2>Workshop Overview<a class="headerlink" href="#workshop-overview" title="Permalink to this headline">¶</a></h2>
-<p>This workshop introduces participants to Python programming, and simple analysis and data visualization techniques. The workshop is geared toward those with little or no prior experience with programming. Interactive exercises will be included in the workshop, giving students the opportunity to test their knowledge and employ the discussed techniques.</p>
-</div>
-<div class="section" id="format">
-<h2>Format<a class="headerlink" href="#format" title="Permalink to this headline">¶</a></h2>
-<p>The workshop is presented online via two asynchronous, interactive modules. Laptops and an internet connection are required.</p>
-<p>In the first module, the focus will be on introductory programming concepts, and Python-specific syntax and usage. The second module will focus on simple data analysis and visualization, specifically using the Python packages <a class="reference external" href="https://numpy.org/">numpy</a> and <a class="reference external" href="https://matplotlib.org/">matplotlib</a>.</p>
-<p>To receive a <strong>GPS credit</strong> for this workshop, students must complete the reflection at the end of the second module.</p>
-<div class="toctree-wrapper compound">
-</div>
+  <div class="section" id="workshop-submission-and-reflection">
+<h1>Workshop Submission and Reflection<a class="headerlink" href="#workshop-submission-and-reflection" title="Permalink to this headline">¶</a></h1>
+<p>I hope that this workshop has provided you with a useful overview of programming in Python. If you are interested in learning more, there are many, <em>many</em> online Python courses available and many are free (just google “python course” or “python tutorial”). One great educational resource to try that is specific to climate, earth and environmental science is <a class="reference external" href="https://projectpythia.org/">Project Pythia</a>.</p>
+<p>To receive a <strong>GPS credit</strong> for this workshop and credit towards class participation in EESll33, you must complete the below submission and reflection. Please complete the activities at the end of Exercises: Part III and reflect on how familiarizing yourself with Python may help you in your graduate research and/or future career.</p>
+<p>Click on the following <a class="reference external" href="https://forms.office.com/Pages/ResponsePage.aspx?id=JsKqeAMvTUuQN7RtVsVSENOwIvPyRLFGtPdhxywZibFUREZSWFZUWkhMSUpBRDlKTjhLRTdCT1RIUS4u">link</a> to complete this brief reflection.</p>
+<div class="section" id="happy-coding">
+<h2>Happy coding!<a class="headerlink" href="#happy-coding" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -272,7 +264,7 @@
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/introduction"
+            path: "./chapters/reflection"
         },
         predefinedOutput: true
     }
@@ -287,8 +279,7 @@
     
     <div class='prev-next-bottom'>
         
-    <a class='left-prev' id="prev-link" href="../index.html" title="previous page">Basic and Intermediate Python</a>
-    <a class='right-next' id="next-link" href="aboutthisbook.html" title="next page">About this book</a>
+    <a class='left-prev' id="prev-link" href="../intermediate/03_intermediate_exercises.html" title="previous page">Exercises: Part III</a>
 
     </div>
     <footer class="footer mt-5 mt-md-0">
