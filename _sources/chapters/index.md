@@ -7,7 +7,7 @@ By [Karen L. Smith][karen], University of Toronto Scarborough
 
 ## Welcome!
 
-This workshop is designed for the [University of Toronto][uot] [School of Graduate Studies][sgs] [Graduate Professional Skills Program][gps] offered through the [Centre for Teaching and Learning][ctl] at the [University of Toronto Scarborough][utsc].
+This workshop is designed for the [University of Toronto][uot] [School of Graduate Studies][sgs] [Centre for Graduate Professional Development][gpd] offered through the [Centre for Teaching and Learning][ctl] at the [University of Toronto Scarborough][utsc].
 
 *We wish to acknowledge this land on which the University of Toronto operates. For thousands of years it has been the traditional land of the Huron-Wendat, the Seneca, and most recently, the Mississaugas of the Credit River. Today, this meeting place is still the home to many Indigenous people from across Turtle Island and we are grateful to have the opportunity to work on this land.*
 
@@ -16,4 +16,4 @@ This workshop is designed for the [University of Toronto][uot] [School of Gradua
 [utsc]: https://www.utsc.utoronto.ca/home/
 [ctl]: https://www.utsc.utoronto.ca/ctl/welcome-centre-teaching-and-learning
 [sgs]: https://www.sgs.utoronto.ca/
-[gps]: https://www.sgs.utoronto.ca/resources-supports/graduate-professional-development-gpd/graduate-professional-skills-gps/
+[gpd]: https://www.cgpd.utoronto.ca/resources/mygpd/
