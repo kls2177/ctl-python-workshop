@@ -1,7 +1,7 @@
 Basic and Intermediate Python
 =====================================
 
-***A School of Graduate Studies Graduate Professional Skills Workshop***
+***A School of Graduate Studies Graduate Professional Development Workshop***
 
 By [Karen L. Smith][karen], University of Toronto Scarborough
 

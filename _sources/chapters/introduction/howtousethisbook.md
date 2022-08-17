@@ -2,13 +2,15 @@
 
 This website uses [jupyter notebooks][jupyter] to display python code and it uses [binder][mybinder] and [Thebe][thebe] to allow users to interact with the code.
 
-There are three approaches to coding in this workshop. The first and recommended if you are planning on using python for much of your academics and research is to install your own copy of python on your laptop or desktop computer and to follow along with the workshop. You are able to copy and paste the python code into your own jupyter notebook and then interact with it yourself.
+There are three approaches to coding in this workshop.
+
+- The first and recommended if you are planning on using python for much of your academics and research is to install your own copy of python on your laptop or desktop computer and to follow along with the workshop. You are able to copy and paste the python code into your own jupyter notebook and then interact with it yourself.
 
 I recommend installing python using the [Anaconda distribution][anaconda]. Follow the installation steps [here][install].
 
-The second option is to follow along in your own jupyter notebook using the [JuypterHub][jhub] for the University of Toronto.
+- The second option is to follow along in your own jupyter notebook using the [JuypterHub][jhub] for the University of Toronto.
 
-Alternatively, you can simply interact with the code using the "Live Code/Launch Thebe" button in the upper right corner of the website.
+- The third option is to simply interact with the code using the "Live Code/Launch Thebe" button in the upper right corner of the website.
 
 ```{figure} livecode.png
 ---
