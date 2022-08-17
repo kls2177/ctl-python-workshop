@@ -3,7 +3,7 @@ Introduction
 
 ## What is Python?
 
-[Python][python] is a powerful, open-source programming language for data wrangling, analysis and visualization. Python is becoming the preferred programming language for [scientific computing][scipycomp] and, increasingly, implementations of new machine learning and artificial intelligence algorithms are being developed with [Python][sklearn].
+[Python][python] is a powerful, open-source programming language for data wrangling, analysis and visualization. Python is becoming the preferred programming language for [scientific computing][scipycomp] and, increasingly, implementations of new machine learning and artificial intelligence algorithms are being developed with Python (e.g., [scikit learn][sklearn]).
 
 ## Workshop Overview
 
