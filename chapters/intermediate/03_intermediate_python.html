@@ -69,7 +69,7 @@
 <meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/03_intermediate_python.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Part III: Working with Real Data" />
-<meta property="og:description" content="Part III: Working with Real Data  We have learned a lot about programming in python - the syntax and the functionality - but, for the most part, we have been us" />
+<meta property="og:description" content="Part III: Working with Real Data  We have learned a lot about programming in Python - the syntax and the functionality - but, for the most part, we have been us" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -303,7 +303,7 @@
                 
   <div class="section" id="part-iii-working-with-real-data">
 <h1>Part III: Working with <em>Real Data</em><a class="headerlink" href="#part-iii-working-with-real-data" title="Permalink to this headline">¶</a></h1>
-<p>We have learned a lot about programming in python - the syntax and the functionality - but, for the most part, we have been using fairly simple examples and data sets. So, let’s now take a look at how we might use python to work with some real data.</p>
+<p>We have learned a lot about programming in Python - the syntax and the functionality - but, for the most part, we have been using fairly simple examples and datasets. So, let’s now take a look at how we might use Python to work with some real data.</p>
 <p>Download the following <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/argo_float_4901412.npz?raw=true">file</a> and save it in the same directory that you are working in. The data we will be working with is ocean temperature, salinity, and pressure from an <a class="reference external" href="https://argo.ucsd.edu/">Argo float</a>.</p>
 <p>Argo floats are amazing! They are autonomous floats that drift and dive throughout the ocean (see <a class="reference internal" href="#argo"><span class="std std-ref">Figure</span></a>) relaying information about temperature and salinity to satellites.</p>
 <div class="figure align-default" id="argo">
@@ -312,7 +312,7 @@
 </div>
 <div class="section" id="load-the-data">
 <h2>1. Load the Data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h2>
-<p>The first thing we need to do is import NumPy and Matplotlib. See if you can remember the syntax for importing these packages.</p>
+<p>The first thing we need to do is import <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. See if you can remember the syntax for importing these packages.</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import packages</span>
@@ -322,7 +322,7 @@
 </div>
 </div>
 </div>
-<p>Now, let’s load the file. The <code class="docutils literal notranslate"><span class="pre">.npz</span></code> file format is a NumPy file format, so we can easily load this file using the <code class="docutils literal notranslate"><span class="pre">np.load()</span></code> function. Note that the raw Argo data does not come in such a nice file format - I made this part a bit easy for us :)</p>
+<p>Now, let’s load the file. The <code class="docutils literal notranslate"><span class="pre">.npz</span></code> file format is a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> file format, so we can easily load this file using the <code class="docutils literal notranslate"><span class="pre">np.load()</span></code> function. Note that the raw Argo data does not come in such a nice file format - I made this part a bit easy for us :)</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load data</span>
@@ -493,7 +493,7 @@
 </div>
 </div>
 <p>Ok, so now we have a sense of how our data is organized. Often we know this before we even load the data, but sometimes we don’t.</p>
-<p>Let’s perform a few other NumPy operations on data to get a sense of what our data looks like. For example, let’s find the maximum temperature value in our data set.</p>
+<p>Let’s perform a few other <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> operations on data to get a sense of what our data looks like. For example, let’s find the maximum temperature value in our data set.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the maximum</span>
@@ -511,7 +511,7 @@ nan
 </div>
 </div>
 </div>
-<p>Oops! Why are we getting <code class="docutils literal notranslate"><span class="pre">nan</span></code> (not-a-number) as the output? This usually means that there are invalid entries within column <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p>
+<p>Oops! Why are we getting <code class="docutils literal notranslate"><span class="pre">nan</span></code> (not-a-number) as the output? This usually means that there are invalid entries (missing data) within column <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p>
 <p>If we examine the <code class="docutils literal notranslate"><span class="pre">T</span></code> column, you should see some entries are nan.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -537,12 +537,12 @@ nan
 </div>
 </div>
 </div>
-<p>We cannot proceed until this issue is resolved because many NumPy functions do not work properly if arrays contain <code class="docutils literal notranslate"><span class="pre">nan</span></code> values. We have a few options:</p>
+<p>We cannot proceed until this issue is resolved because many <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> functions do not work properly if arrays contain <code class="docutils literal notranslate"><span class="pre">nan</span></code> values. We have a few options:</p>
 <ul class="simple">
-<li><p>Delete <code class="docutils literal notranslate"><span class="pre">nan</span></code> entries? You can’t delete the invalid entry, that will mess up the shape.</p></li>
+<li><p>Delete <code class="docutils literal notranslate"><span class="pre">nan</span></code> entries? You can’t delete the invalid entry because that will mess up the shape.</p></li>
 <li><p>Manually assign place-holder values? This can be tedious.</p></li>
 </ul>
-<p>NumPy offers a convenient approach to dealing with <code class="docutils literal notranslate"><span class="pre">nan</span></code> values: We can use something called <a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.generic.html"><strong>Masked Arrays</strong></a>.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> offers a convenient approach to dealing with <code class="docutils literal notranslate"><span class="pre">nan</span></code> values: We can use something called <a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.generic.html"><strong>Masked Arrays</strong></a>.</p>
 <div class="section" id="masked-arrays">
 <h3>2.1 Masked Arrays<a class="headerlink" href="#masked-arrays" title="Permalink to this headline">¶</a></h3>
 <p>Here we will “mask” out the invalid or <code class="docutils literal notranslate"><span class="pre">nan</span></code> values.</p>
@@ -572,7 +572,7 @@ nan
 </div>
 </div>
 </div>
-<p>Above command will create a new masked array called T with all invalid entries masked (–).</p>
+<p>Above command will create a new masked array called <code class="docutils literal notranslate"><span class="pre">T</span></code> with all invalid entries masked (–).</p>
 <p>The mask is simply an array with same shape as the originial data, with 0 and 1 as values. If value is 1, then corresponding data will be ignored.</p>
 <p>Let’s look at masked arrays in a bit more detail using a simple example.</p>
 <div class="cell docutils container">
@@ -604,7 +604,7 @@ nan
 </div>
 </div>
 <p>We get a meaningless answer.</p>
-<p>Instead, let’s create a mask that will tell NumPy to ignore the element with the <code class="docutils literal notranslate"><span class="pre">nan</span></code> value.</p>
+<p>Instead, let’s create a mask that will tell <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> to ignore the element with the <code class="docutils literal notranslate"><span class="pre">nan</span></code> value.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a masked array</span>
@@ -650,7 +650,7 @@ nan
 <div class="section" id="plotting-the-data">
 <h2>3. Plotting the Data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">¶</a></h2>
 <p>First, let’s plot some simple time series of our data. Time series are line plots with time on the x-axis and the variable of interest on the y-axis.</p>
-<p>To plot time series of this data, we have to pick a level that we are going to plot. Let’s pick the surface (level 0) and a level at-depth (level 60) and plot time series of <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">S</span></code>.</p>
+<p>To plot time series of this data, we have to pick a level that we are going to plot. Let’s pick the surface (level 0) and a level at-depth (level 60) and plot time series of <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">S</span></code>. Plot the two levels on the same plot for each variable.</p>
 <p>Before you click to reveal, try this on your own. Once you have something, first click to reveal the output and see if your plot looks similar to mine. If you’re stuck, click to reveal the code.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
@@ -686,12 +686,12 @@ nan
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a scatter plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span> <span class="c1"># color corresponds to P, pressure</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fb2f2b65ee0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fed3bb5a790&gt;
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_python_35_1.png" src="../../_images/03_intermediate_python_35_1.png" />
@@ -704,6 +704,7 @@ nan
 <ul class="simple">
 <li><p>add labels to your x- and y-axes.</p></li>
 <li><p>add a title</p></li>
+<li><p>colourcode your scatter plot</p></li>
 <li><p>add a colourbar</p></li>
 <li><p>add units to your colourbar</p></li>
 <li><p>change the size of your figure</p></li>
@@ -721,7 +722,7 @@ nan
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
 
 <span class="c1"># scatter plot</span>
-<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">,</span> <span class="n">c</span><span class="o">=</span><span class="n">P</span><span class="p">)</span> <span class="c1"># # color corresponds to P, pressure</span>
 
 <span class="c1"># title, labels, colourbar</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;T-S Plot (Float 4901412)&quot;</span><span class="p">)</span>
@@ -740,7 +741,7 @@ nan
 </div>
 <div class="section" id="simple-statistical-analysis">
 <h2>4. Simple Statistical Analysis<a class="headerlink" href="#simple-statistical-analysis" title="Permalink to this headline">¶</a></h2>
-<p>Finally, let’s do a bit of statistical analysis of our data. NumPy has several <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">statistical functions</a> that we can use.</p>
+<p>Finally, let’s do a bit of statistical analysis of our data. <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> has several <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">statistical functions</a> that we can use.</p>
 <p>Let’s see whether there is a clear relationship between latitude and surface salinity, i.e. does the surface salinity change as the float travels northward?</p>
 <p>To investigate this, let’s first do a scatter plot of these two variabiles. Try on your own first.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
@@ -786,8 +787,8 @@ nan
 </div>
 </div>
 </div>
-<p>We usually also want to know how robust our linear fit is. To do this we want the <em>R</em>-squared value. This tells us what fraction of the variance in <code class="docutils literal notranslate"><span class="pre">S</span></code> if explained by <code class="docutils literal notranslate"><span class="pre">lat</span></code>.</p>
-<p>Using NumPy, we can do this using the <code class="docutils literal notranslate"><span class="pre">np.corrcoef()</span></code> function, which computes the correlation matrix (<strong>R</strong>).</p>
+<p>We usually also want to know how robust our linear fit is. To do this we want the <em>R</em>-squared value. This tells us what fraction of the variance in <code class="docutils literal notranslate"><span class="pre">S</span></code> is explained by <code class="docutils literal notranslate"><span class="pre">lat</span></code>.</p>
+<p>Using <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, we can do this using the <code class="docutils literal notranslate"><span class="pre">np.corrcoef()</span></code> function, which computes the correlation matrix (<strong>R</strong>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the correlation between lat and S</span>
@@ -819,7 +820,7 @@ nan
 </div>
 </div>
 <p>Wow! Latitude explains about 74% for the variance in surface salinity.</p>
-<p>Now, let’s add the linear fit and the <em>R</em>-squared information to our plot (as text). Try it on your own first.</p>
+<p>Now, let’s add the linear fit and the <em>R</em>-squared information to our plot (as text). One way to add the text is to add it to the legend label. Try it on your own first.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with title, labels and color bar</span>
@@ -849,7 +850,7 @@ nan
 <img alt="../../_images/03_intermediate_python_47_0.png" src="../../_images/03_intermediate_python_47_0.png" />
 </div>
 </div>
-<p>This is just a quick sampling of what you can do with NumPy. More sophisticated statistical and numerical analysis can be done with other Python packages, such as <a class="reference external" href="https://www.scipy.org/">SciPy</a> and <a class="reference external" href="https://www.statsmodels.org/stable/index.html">statsmodels</a>.</p>
+<p>This is just a quick sampling of what you can do with <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>. More sophisticated statistical and numerical analysis can be done with other Python packages, such as <a class="reference external" href="https://www.scipy.org/"><code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a> and <a class="reference external" href="https://www.statsmodels.org/stable/index.html"><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a>.</p>
 <p>Now, it’s your turn to try some simple plotting and analysis.</p>
 </div>
 </div>

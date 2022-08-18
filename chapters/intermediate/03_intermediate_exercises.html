@@ -69,7 +69,7 @@
 <meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/03_intermediate_exercises.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Exercises: Part III" />
-<meta property="og:description" content="Exercises: Part III  We are going to read in some real data again and do some simple plots and analysis. Let’s take a look at a daily sea ice extent time series" />
+<meta property="og:description" content="Exercises: Part III  We are going to read in some real data again and do some simple plots and analysis. Let’s take a look at a monthly sea ice extent time seri" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -261,6 +261,11 @@
    Introducing Datetime (Bonus section)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#trend-analysis">
+   Trend Analysis
+  </a>
+ </li>
 </ul>
 
         </nav>
@@ -274,10 +279,10 @@
                 
   <div class="section" id="exercises-part-iii">
 <h1>Exercises: Part III<a class="headerlink" href="#exercises-part-iii" title="Permalink to this headline">¶</a></h1>
-<p>We are going to read in some real data again and do some simple plots and analysis. Let’s take a look at a daily sea ice extent time series from the <a class="reference external" href="https://nsidc.org/data/seaice_index/archives">National Snow and Ice Data Center</a>. Sea ice extent is measured in 10<span class="math notranslate nohighlight">\(^6\)</span> km<span class="math notranslate nohighlight">\(^2\)</span>. You can download your own copy of the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/ice_month.csv.zip?raw=true">here</a>.</p>
+<p>We are going to read in some real data again and do some simple plots and analysis. Let’s take a look at a monthly sea ice extent time series from the <a class="reference external" href="https://nsidc.org/data/seaice_index/archives">National Snow and Ice Data Center</a>. Sea ice extent is measured in 10<span class="math notranslate nohighlight">\(^6\)</span> km<span class="math notranslate nohighlight">\(^2\)</span>. You can download your own copy of the <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/ice_month.csv.zip?raw=true">here</a>.</p>
 <p>The data consists of 3 columns: year, month and extent.</p>
 <p>Follow along in your own jupyter notebook.</p>
-<p>First, let’s load in NumPy and Matplotlib. See if you can remember the syntax without peeking :)</p>
+<p>First, let’s load in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. See if you can remember the syntax without peeking :)</p>
 <div class="cell tag_hide-input docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import packages</span>
@@ -287,7 +292,7 @@
 </div>
 </div>
 </div>
-<p>Next, we will load in the data. To load in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files in NumPy, we can use the <code class="docutils literal notranslate"><span class="pre">np.genfromtxt()</span></code> function.</p>
+<p>Next, we will load in the data. To load in <code class="docutils literal notranslate"><span class="pre">.csv</span></code> files in <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, we can use the <code class="docutils literal notranslate"><span class="pre">np.genfromtxt()</span></code> function.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Load Arctic sea ice data</span>
@@ -335,7 +340,7 @@
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">datetime</span>
 
 <span class="c1"># loop over the elements of our time components</span>
-<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[M]&#39;</span><span class="p">)</span>
+<span class="n">time</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">empty</span><span class="p">((</span><span class="n">ice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span><span class="n">dtype</span><span class="o">=</span><span class="s1">&#39;datetime64[M]&#39;</span><span class="p">)</span> <span class="c1"># M is for monthly data</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">ice</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]):</span>
     <span class="c1"># to create a datetime object we list things in order of year, month, day, hour, minute, second, etc.</span>
     <span class="n">time</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">datetime</span><span class="o">.</span><span class="n">datetime</span><span class="p">(</span><span class="n">year</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">month</span><span class="p">[</span><span class="n">i</span><span class="p">],</span><span class="n">day</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># we use day=1 just as a place-holder</span>
@@ -430,7 +435,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fe118fd26d0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7faa247ce640&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_12_1.png" src="../../_images/03_intermediate_exercises_12_1.png" />
@@ -472,6 +477,11 @@
 <img alt="../../_images/03_intermediate_exercises_16_1.png" src="../../_images/03_intermediate_exercises_16_1.png" />
 </div>
 </div>
+<p>You can see a gap in the data where the missing data is masked.</p>
+<p>Does this plot make physical sense? Consider the seasonal cycle of Arctic sea ice and the long-term trend.</p>
+</div>
+<div class="section" id="trend-analysis">
+<h2>Trend Analysis<a class="headerlink" href="#trend-analysis" title="Permalink to this headline">¶</a></h2>
 <p>One of the key indicators of climate change is Arctic sea ice loss. Typically, Arctic sea ice extent in <strong>September</strong> is used to show the dramatic loss of sea ice, as September is the month when the sea ice extent is at its minimum.</p>
 <p>Use a loop and a conditional to extract the September data.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
@@ -563,17 +573,17 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fe1191ebb20&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7faa249ea8b0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/03_intermediate_exercises_24_1.png" src="../../_images/03_intermediate_exercises_24_1.png" />
 </div>
 </div>
-<p><strong>To get GPS credit for this workshop and credit towards class participation in EES1132 and EES1133, please complete the following additional exercises:</strong></p>
+<p><strong>To get GPD credit for this workshop and credit towards class participation in EES1133, please complete the following additional exercises:</strong></p>
 <ul class="simple">
-<li><p>plot the time series of March Arctic SIE (save this plot for upload using <code class="docutils literal notranslate"><span class="pre">plt.savefig()</span></code> (you may need to Google this). Compare the magnitude of the trends in March (the Arctic SIE maximum) and September.</p></li>
+<li><p>plot the time series of March Arctic SIE (save this plot as a .png file for upload using <code class="docutils literal notranslate"><span class="pre">plt.savefig()</span></code> (you may need to Google this function). Compare the magnitude of the trends in March (the Arctic SIE maximum) and September.</p></li>
 <li><p>calculate the <em>R</em>-squared for the March and September trends (refer to the pervious exercise using the Argo data).</p></li>
-<li><p>compute the climatological (i.e., average over all years) seasonal cycle of SIE and plot it. This is a plot of SIE as a function of month. (Hint: Drop the years 1978 and 2020 (these are not complete years) and then use <code class="docutils literal notranslate"><span class="pre">np.reshape()</span></code> to create an array for SIE with two dimensions: (year,month). Next, calculate the mean over the appropriate dimension using <code class="docutils literal notranslate"><span class="pre">np.mean(...,axis=...)</span></code>.</p></li>
+<li><p>compute the climatological (i.e., average over all years) seasonal cycle of SIE and plot it. This is a plot of SIE as a function of month and each month represents the mean over all years. (Hint: Remove the years 1978 and 2020 by using slicing (these are not complete years) and then use <code class="docutils literal notranslate"><span class="pre">np.reshape()</span></code> to create an array for SIE with two dimensions: (year,month). Next, calculate the mean over the appropriate dimension using <code class="docutils literal notranslate"><span class="pre">np.mean(...,axis=...)</span></code>. Finally, plot the climatological mean SIE as a function of month. We looked at examples of the reshape function in Module 2, Exercises: Part I. Here is an <a class="reference external" href="https://globalcryospherewatch.org/state_of_cryo/seaice/osisaf_nh_sie_daily-2years.png">example</a> of what this plot should roughly look like.</p></li>
 </ul>
 </div>
 </div>

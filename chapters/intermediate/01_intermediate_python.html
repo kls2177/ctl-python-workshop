@@ -263,7 +263,13 @@
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#why-numpy">
-   1. Why NumPy?
+   1. Why
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     NumPy
+    </span>
+   </code>
+   ?
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -339,6 +345,7 @@
 <p>Take a few minutes to review the content of Module 1. Module 2 builds on what was covered in Module 1.</p>
 <ul class="simple">
 <li><p>To open a Python interpreter, type <code class="docutils literal notranslate"><span class="pre">python</span></code> in terminal.</p></li>
+<li><p>You can also run Python code using jupyter notebooks.</p></li>
 <li><p>Arithmetic operations:</p>
 <ul>
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> Plus</p></li>
@@ -381,7 +388,7 @@
 </ul>
 </div>
 <div class="section" id="why-numpy">
-<h2>1. Why NumPy?<a class="headerlink" href="#why-numpy" title="Permalink to this headline">¶</a></h2>
+<h2>1. Why <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?<a class="headerlink" href="#why-numpy" title="Permalink to this headline">¶</a></h2>
 <p>Let’s take a look at the example in the video.</p>
 <p>Imagine you want to multiply two lists, <code class="docutils literal notranslate"><span class="pre">[1,3,4]</span></code> and <code class="docutils literal notranslate"><span class="pre">[5,6,7]</span></code>, element by element. We can do this by looping over the elements of each list, multiplying them and then storing them in a new list.</p>
 <div class="cell docutils container">
@@ -402,11 +409,13 @@
 </div>
 </div>
 </div>
-<p>This is pretty cumbersome. NumPy allows us to do these types of element-wise operations with ease.</p>
+<p>However, this is pretty cumbersome. <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> allows us to do these types of element-wise operations with ease.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import NumPy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span> <span class="c1"># we import it &quot;as np&quot; just so that we don&#39;t have to type &quot;numpy&quot; all the time.</span>
+
+<span class="c1"># note `np.array()` converts a list to an array</span>
 
 <span class="n">result</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
@@ -419,16 +428,24 @@
 </div>
 </div>
 </div>
-<p>NumPy also allows us to store multi-dimensional data. For example, in climate science (my field), we are often working with data that has three spatial dimensions (latitude, longitude and height) as well as the time dimension.</p>
+<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> also allows us to store multi-dimensional data in a new data structure called an <em>array</em> (see below). For example, in climate science (my field), we are often working with data that has three spatial dimensions (latitude, longitude and height) as well as the time dimension.</p>
 <div class="section" id="importing-numpy">
 <h3>1.1. Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this headline">¶</a></h3>
-<p>To use NumPy, we first need to import it.</p>
+<p>To use <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, we first need to import it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import NumPy</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
-
-<span class="c1"># what version are we using? </span>
+</pre></div>
+</div>
+</div>
+</div>
+<blockquote>
+<div><p><em>Side note:</em> You can check the numpy version using <code class="docutils literal notranslate"><span class="pre">np.__version__</span></code>:</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what version are we using? </span>
 <span class="n">np</span><span class="o">.</span><span class="n">__version__</span>
 </pre></div>
 </div>
@@ -439,13 +456,10 @@
 </div>
 </div>
 </div>
-<blockquote>
-<div><p><em>Side note:</em> You can check the numpy version using <code class="docutils literal notranslate"><span class="pre">np.__version__</span></code>:</p>
-</div></blockquote>
 </div>
 <div class="section" id="ndarray">
 <h3>1.2 NDArray<a class="headerlink" href="#ndarray" title="Permalink to this headline">¶</a></h3>
-<p>The fundamental data structure within NumPy is called an NDArray (ND = <em>N</em>-dimensional).</p>
+<p>The fundamental data structure within <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> is called an NDArray (ND = <em>N</em>-dimensional).</p>
 <p>One way to create a NDArray by converting a regular Python list.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -509,7 +523,7 @@
 </div>
 </div>
 </div>
-<p>So, we see that a has one dimension with 4 elements. Let’s try buidling another array with multiple dimensions. What is the shape <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p>
+<p>So, we see that <code class="docutils literal notranslate"><span class="pre">a</span></code> has one dimension with 4 elements. Let’s try buidling another array with multiple dimensions. What is the shape <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensional array</span>
@@ -529,12 +543,12 @@
 <div><p><code class="docutils literal notranslate"><span class="pre">shape</span> <span class="pre">=</span> <span class="pre">(x_N,</span> <span class="pre">x_{N-1},</span> <span class="pre">x_{N-2},</span> <span class="pre">…,</span> <span class="pre">x_1)</span></code></p>
 </div></blockquote>
 <p><span class="math notranslate nohighlight">\(N\)</span> is the dimension count. <span class="math notranslate nohighlight">\(x_i\)</span> is the element count at <span class="math notranslate nohighlight">\(i^{th}\)</span> dimension.</p>
-<p>So, in the case of the above array, we start from the outer <code class="docutils literal notranslate"><span class="pre">[]</span></code> and work our way in. Within the first set of <code class="docutils literal notranslate"><span class="pre">[]</span></code>, we have 2 lists, so the number of elements in the Nth dimension is 2. Within the next set of <code class="docutils literal notranslate"><span class="pre">[]</span></code> we see that each list consists of 4 elements, so the number of elements in the N-1th dimension is 4. Thus, the shape is (2,4).</p>
+<p>So, in the case of the above array, we start from the outer <code class="docutils literal notranslate"><span class="pre">[]</span></code> and work our way in. Within the first set of <code class="docutils literal notranslate"><span class="pre">[]</span></code>, we have 2 lists, so the number of elements in the Nth dimension is 2. Within the next set of <code class="docutils literal notranslate"><span class="pre">[]</span></code> we see that each list consists of 4 elements, so the number of elements in the <span class="math notranslate nohighlight">\(N\)</span>-1th dimension is 4. Thus, the shape is (2,4).</p>
 </div>
 </div>
 <div class="section" id="array-creation">
 <h3>1.3 Array Creation<a class="headerlink" href="#array-creation" title="Permalink to this headline">¶</a></h3>
-<p>Above, we created an NDarray by converting lists to arrays using the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function. But, NumPy also provides many helpful functions to let you quickly create arrays from scratch.</p>
+<p>Above, we created an NDarray by converting lists to arrays using the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function. But, <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> also provides many helpful functions to let you quickly create arrays from scratch.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3x3 array filled with zeros</span>
@@ -605,7 +619,7 @@
 <p>An alternative way to fill an array with a constant is to use <code class="docutils literal notranslate"><span class="pre">np.full()</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2x7x3 array filled with e</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2x7x3 array filled with e (use the np.e function to call the value for e)</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
@@ -643,6 +657,91 @@
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 6 7 8]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also specify the spacing between values within the range using the additional <code class="docutils literal notranslate"><span class="pre">step</span></code> argument:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function arange in module numpy:
+
+arange(...)
+    arange([start,] stop[, step,], dtype=None)
+    
+    Return evenly spaced values within a given interval.
+    
+    Values are generated within the half-open interval ``[start, stop)``
+    (in other words, the interval including `start` but excluding `stop`).
+    For integer arguments the function is equivalent to the Python built-in
+    `range` function, but returns an ndarray rather than a list.
+    
+    When using a non-integer step, such as 0.1, the results will often not
+    be consistent.  It is better to use `numpy.linspace` for these cases.
+    
+    Parameters
+    ----------
+    start : number, optional
+        Start of interval.  The interval includes this value.  The default
+        start value is 0.
+    stop : number
+        End of interval.  The interval does not include this value, except
+        in some cases where `step` is not an integer and floating point
+        round-off affects the length of `out`.
+    step : number, optional
+        Spacing between values.  For any output `out`, this is the distance
+        between two adjacent values, ``out[i+1] - out[i]``.  The default
+        step size is 1.  If `step` is specified as a position argument,
+        `start` must also be given.
+    dtype : dtype
+        The type of the output array.  If `dtype` is not given, infer the data
+        type from the other input arguments.
+    
+    Returns
+    -------
+    arange : ndarray
+        Array of evenly spaced values.
+    
+        For floating point arguments, the length of the result is
+        ``ceil((stop - start)/step)``.  Because of floating point overflow,
+        this rule may result in the last element of `out` being greater
+        than `stop`.
+    
+    See Also
+    --------
+    numpy.linspace : Evenly spaced numbers with careful handling of endpoints.
+    numpy.ogrid: Arrays of evenly spaced numbers in N-dimensions.
+    numpy.mgrid: Grid-shaped arrays of evenly spaced numbers in N-dimensions.
+    
+    Examples
+    --------
+    &gt;&gt;&gt; np.arange(3)
+    array([0, 1, 2])
+    &gt;&gt;&gt; np.arange(3.0)
+    array([ 0.,  1.,  2.])
+    &gt;&gt;&gt; np.arange(3,7)
+    array([3, 4, 5, 6])
+    &gt;&gt;&gt; np.arange(3,7,2)
+    array([3, 5])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># array using np.arange with a step</span>
+<span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 7]
 </pre></div>
 </div>
 </div>
@@ -695,7 +794,7 @@
 </div>
 </div>
 </div>
-<p>Here is a summary of the most commonly used array creation functions.</p>
+<p>Here is a summary of the most commonly used array creation functions:</p>
 <div class="section" id="the-most-commonly-used-array-creation-functions">
 <h4><strong>The most commonly used array creation functions</strong><a class="headerlink" href="#the-most-commonly-used-array-creation-functions" title="Permalink to this headline">¶</a></h4>
 <blockquote>
@@ -728,7 +827,7 @@
 </div>
 <div class="section" id="indexing">
 <h3>1.4 Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h3>
-<p>Indexing for NumPy arrays is very similar to Python lists, except that we have to index for more than one dimension.</p>
+<p>Indexing for <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays is very similar to Python lists, except that we have to index for more than one dimension.</p>
 <p>Let’s start with the array <code class="docutils literal notranslate"><span class="pre">b</span></code> that we defined above.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -780,7 +879,7 @@
 </div>
 <div class="section" id="array-operations">
 <h2>2. Array Operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">¶</a></h2>
-<p>Being able to perform element-wise operations is what makes NumPy so powerful. Let’s take a look by first defining two arrays.</p>
+<p>Being able to perform element-wise operations is what makes <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> so powerful. Let’s take a look by first defining two arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First define two arrays</span>
@@ -790,7 +889,7 @@
 </div>
 </div>
 </div>
-<p>NumPy allows for basic arithmetic operations such as addition and multiplication. What do you get if you add <code class="docutils literal notranslate"><span class="pre">k</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> element-wise?</p>
+<p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> allows for basic arithmetic operations such as addition and multiplication. What do you get if you add <code class="docutils literal notranslate"><span class="pre">k</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> element-wise?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">j</span>
@@ -824,7 +923,6 @@
 <div class="section" id="broadcasting">
 <h3>2.1 Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h3>
 <p>Broadcasting allows us to operate on differently shaped arrays, with some constraints. Broadcasting means that array operations occur within C instead of Python, which is much faster.</p>
-<p>And it .</p>
 <p><img alt="" src="https://www.evernote.com/l/Aq2wONNsbSFJ_Z7_JyPS3U5T3QQ3ULrYrVgB/image.png" /></p>
 <p><img alt="" src="https://www.evernote.com/l/Aq3NWqDzrodAxJe2An6QGBOmGDDWtJFA-5MB/image.png" /></p>
 <p><img alt="" src="https://www.evernote.com/l/Aq18pMOG1uxFEbV_6c6dJ5Ie3RIu5-JkEuoB/image.png" /></p>

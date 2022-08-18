@@ -253,7 +253,7 @@
   <div class="section" id="exercises-part-ii">
 <h1>Exercises: Part II<a class="headerlink" href="#exercises-part-ii" title="Permalink to this headline">¶</a></h1>
 <p>Here we will use what we’ve learned to remove missing data from a list. As boring as this sounds, managing missing data is a very common issue in scientific computing. So, let’s give it a try.</p>
-<p>In the example below, we have bunch of data that we want to add together but some is missing. Missing data points are flagged with the number -99, so if we include this data in our sum, the results will be incorrect. We want to remove these from our data set before we do our sum.</p>
+<p>In the example below, <strong>we have bunch of data that we want to add together but some is missing</strong>. Missing data points in our dataset are flagged with the number -99, so if we include this data in our sum, the results will be incorrect. We want to remove these from our data set before we do our sum.</p>
 <p>We will be reading in a file called <code class="docutils literal notranslate"><span class="pre">missing_data.csv</span></code>. You can download the file <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/missing_data.zip?raw=true">here</a>. To read this in, we are going to cheat and use a <strong>package</strong> called <strong>csv</strong>. You can read it in without this package, but it is a bit cumbersome. In Module 2, we will learn more about importing packages.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -284,7 +284,7 @@
 </div>
 </div>
 </div>
-<p>Now, let’s check the type of data in <code class="docutils literal notranslate"><span class="pre">sample</span></code>. Use indexing and type() to do this.</p>
+<p>Now, let’s check the type of data in <code class="docutils literal notranslate"><span class="pre">sample</span></code>. Use indexing and <code class="docutils literal notranslate"><span class="pre">type()</span></code> to do this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pick an element of sample and find the data type</span>
@@ -292,7 +292,9 @@
 </div>
 </div>
 </div>
+<p>Do you need to do a type conversion in order to compute the sum?</p>
 <p>Now, let’s try to remove the missing data and compute the sum using a <code class="docutils literal notranslate"><span class="pre">for</span></code> loop. We should have two new things at the end of our loop, a new list with no missing data and a sum that excludes the missing data.</p>
+<p>Fill in the code block below:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># remove missing data and sum</span>
@@ -336,7 +338,7 @@
 <p>Now, let’s try the same thing but write it as a function. Again, try it on your own before you click to reveal.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># function to remove missing data and compute the sum (remove the number sign below to get started)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># function to remove missing data and compute the sum (remove the comment sign (#) below to get started)</span>
 
 <span class="c1">#def manage_missing_data(l):</span>
     
