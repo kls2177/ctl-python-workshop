@@ -10,6 +10,8 @@ The JupyterBook source and all workshop content (mostly [Jupyter Notebook][noteb
 
 The material is licensed for permissive re-use under the [Creative Commons Attribution 4.0 International (CC-BY 4.0)][cc] license.
 
+Special thanks to a former UTSC undergraduate student, Jun Zheng, for helping to put this first iteration of this workshop together.
+
 [jupyterbook]: https://jupyterbook.org
 [book]: https://kls2177.github.io/ctl-python-workshop/
 [repo]: https://github.com/kls2177/ctl-python-workshop

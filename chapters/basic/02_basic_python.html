@@ -69,7 +69,7 @@
 <meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/basic/02_basic_python.html" />
 <meta property="og:type"        content="article" />
 <meta property="og:title"       content="Part II: Loops, Data Structures and Functions" />
-<meta property="og:description" content="Part II: Loops, Data Structures and Functions  In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about python-spec" />
+<meta property="og:description" content="Part II: Loops, Data Structures and Functions  In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about Python-spec" />
 <meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
 
 <meta name="twitter:card" content="summary" />
@@ -266,8 +266,8 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#lists">
-   6. Lists
+  <a class="reference internal nav-link" href="#data-structures-lists">
+   6. Data Structures: Lists
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -295,13 +295,13 @@
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#tuples">
-   7. Tuples
+  <a class="reference internal nav-link" href="#data-structures-tuples">
+   7. Data Structures: Tuples
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#dictionaries">
-   8. Dictionaries
+  <a class="reference internal nav-link" href="#data-structures-dictionaries">
+   8. Data Structures: Dictionaries
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
@@ -339,7 +339,7 @@
                 
   <div class="section" id="part-ii-loops-data-structures-and-functions">
 <h1>Part II: Loops, Data Structures and Functions<a class="headerlink" href="#part-ii-loops-data-structures-and-functions" title="Permalink to this headline">¶</a></h1>
-<p>In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about python-specific <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">data structures</a>.</p>
+<p>In Part II, we will cover a few more programming basics (e.g. loops, functions, etc.) and learn about Python-specific <a class="reference external" href="https://docs.python.org/3/tutorial/datastructures.html">data structures</a>.</p>
 <div class="section" id="loops">
 <h2>5. Loops<a class="headerlink" href="#loops" title="Permalink to this headline">¶</a></h2>
 <p>Loops are important in programming as they allow you to execute a block of code repeatedly. It is very common that you may need to use a piece of code over and over but you do not want to write the same line of code multiple times.</p>
@@ -388,14 +388,14 @@
 </div>
 <div class="section" id="for-loops">
 <h3>5.2 For Loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h3>
-<p>You can use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to loop through a <code class="docutils literal notranslate"><span class="pre">range</span></code> of values. Later you will see it can also loop through lists.</p>
+<p>You can use <code class="docutils literal notranslate"><span class="pre">for</span></code> loops to loop through a <code class="docutils literal notranslate"><span class="pre">range</span></code> of values. Later you will see the <code class="docutils literal notranslate"><span class="pre">for</span></code> loops can also loop through lists.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">int</span><span class="p">):</span>
     <span class="n">command1</span>
     <span class="n">command2</span>
     <span class="o">...</span>
 </pre></div>
 </div>
-<p>Before we proceed, let’s see how the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function works (another built-in python function).</p>
+<p>Before we proceed, let’s see how the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function works (another built-in Python function).</p>
 <p><code class="docutils literal notranslate"><span class="pre">range(start,</span> <span class="pre">stop,</span> <span class="pre">step)</span></code> creates a range of integers from <em>start</em> up to but not including <em>stop</em>. <em>start</em> is optional and defaults to zero. <em>step</em> is also optional: the default is 1.</p>
 <p>This will loop and set <code class="docutils literal notranslate"><span class="pre">value</span></code> from 0 until <code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">-</span> <span class="pre">1</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
@@ -446,10 +446,10 @@
 </div>
 </div>
 </div>
-<div class="section" id="lists">
-<h2>6. Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-structures-lists">
+<h2>6. Data Structures: Lists<a class="headerlink" href="#data-structures-lists" title="Permalink to this headline">¶</a></h2>
 <p>Now, for the fun stuff! We rarely want to just work with one number at a time. We often want to store more than one thing in the same data structure. You can store anything in a list.</p>
-<p>To create a list, use the following command:</p>
+<p>To create a list, use the following command (<strong>Note: we are using the lower-case letter l, l for list, to name our list. This is not the number 1.</strong>):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">l</span> <span class="o">=</span> <span class="p">[]</span> <span class="c1"># l is now an empty list</span>
 </pre></div>
 </div>
@@ -519,22 +519,6 @@
 </div>
 </div>
 </div>
-<p>If we want to access an element of a list, we can use <strong>indexing</strong>. Indices start from zero in python.</p>
-<p>So, in the example below, if we are accessing element 1, what value are we going to get?</p>
-<div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access a value by index. Python counts from 0!</span>
-<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;123&quot;</span><span class="p">]</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.4
-</pre></div>
-</div>
-</div>
-</div>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Concatenate two lists with a + sign</span>
@@ -560,6 +544,22 @@
 <li><p>…</p></li>
 </ul>
 <p>Here are even <a class="reference external" href="https://www.w3schools.com/python/python_lists.asp">more</a>!</p>
+<p>If we want to access an element of a list, we can use <strong>indexing</strong>. Indices start from zero in Python.</p>
+<p>So, in the example below, if we are accessing the element with index = 1, what value are we going to get?</p>
+<div class="cell tag_hide-output docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Access a value by index. Python counts from 0!</span>
+<span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.4</span><span class="p">,</span> <span class="s2">&quot;123&quot;</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">l</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.4
+</pre></div>
+</div>
+</div>
+</div>
 </div>
 </div>
 <div class="section" id="extract-data-from-lists">
@@ -625,7 +625,7 @@
 <div class="section" id="loop-through-a-list">
 <h3>6.3 Loop Through a List<a class="headerlink" href="#loop-through-a-list" title="Permalink to this headline">¶</a></h3>
 <p>Now, let’s use what we learned about loops to loop through a list.</p>
-<p>In the example below, what will be the output? Try it out on your own or click to reveal the output.</p>
+<p>In the example below, what will be the output? Try it out on your own before you click to reveal the output.</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Loop through a list</span>
@@ -644,7 +644,7 @@ hi
 </div>
 </div>
 </div>
-<p>An alternative way to loop through a list is to use indexing. Here we are using another built-in python function, <code class="docutils literal notranslate"><span class="pre">len()</span></code> to find the number of elements in a list. How many elements are in the list below?</p>
+<p>An alternative way to loop through a list is to use indexing. Here we are using another built-in Python function, <code class="docutils literal notranslate"><span class="pre">len()</span></code> to find the number of elements in a list. How many elements are in the list below?</p>
 <div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># demonstration of the len() function</span>
@@ -679,8 +679,8 @@ hi
 </div>
 </div>
 </div>
-<div class="section" id="tuples">
-<h2>7. Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-structures-tuples">
+<h2>7. Data Structures: Tuples<a class="headerlink" href="#data-structures-tuples" title="Permalink to this headline">¶</a></h2>
 <p>Tuples are like lists, but immutable. We will take a closer look at what immutable means later.</p>
 <p>To create a tuple, use the following command:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">t</span> <span class="o">=</span> <span class="p">()</span> <span class="c1"># t is now an empty tuple</span>
@@ -736,8 +736,8 @@ hi
 </div>
 </div>
 </div>
-<div class="section" id="dictionaries">
-<h2>8. Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="data-structures-dictionaries">
+<h2>8. Data Structures: Dictionaries<a class="headerlink" href="#data-structures-dictionaries" title="Permalink to this headline">¶</a></h2>
 <p>Instead of having an numeric index for each value, dictionaries allow you to map a custom key to each value. You can think of dictionaries like spreadsheets, with the keys being the column names. You can use almost anything as a key, it is quite flexible.</p>
 <p>To create a dictionary, use the following command:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d</span> <span class="o">=</span> <span class="p">{}</span> <span class="c1"># d is now an empty dictionary</span>
@@ -873,6 +873,7 @@ False (7, 8)
 </pre></div>
 </div>
 <p>Once a function returns, it will immediately exit the function.</p>
+<p>As with conditionals, note that the colon and the indentation of the commands is an essential part of the syntax.</p>
 <p>The function is defined and then it needs to be called with actual input. Let’s take a look.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -911,9 +912,6 @@ False (7, 8)
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>hi Jun
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>
 </pre></div>
 </div>
 </div>
@@ -979,7 +977,7 @@ False (7, 8)
 <p>Now, let’s try the same thing, but with a tuple (an immutable data structure). What happens?</p>
 <p>As you can see, the function “mutated” the original list. However, if we change the list to a tuple…</p>
 <div class="figure align-default" id="tuple">
-<a class="reference internal image-reference" href="../../_images/tuple.png"><img alt="../../_images/tuple.png" src="../../_images/tuple.png" style="height: 150px;" /></a>
+<a class="reference internal image-reference" href="../../_images/tuple.png"><img alt="../../_images/tuple.png" src="../../_images/tuple.png" style="height: 200px;" /></a>
 </div>
 <p>The function is not able to mutate the tuple - we get an error.</p>
 <p>Now, we will test what we’ve learned by cleaning up missing data in a list.</p>
