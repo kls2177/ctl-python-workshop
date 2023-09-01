@@ -18,7 +18,7 @@ name: livecode
 Look for this "Live Code" button on the module pages to interact with the code via Thebe and binder.
 ```
 
-Finally, the best way to learn Python through this workshop is by trying the exercises yourself as much as possible before clicking to reveal the answers. That said, this workshop should not take you more than 3-5 hours to complete, so if you get stuck, click to reveal and move on to the next thing.
+Finally, the best way to learn Python through this workshop is by trying the exercises yourself as much as possible before clicking to reveal the answers. That said, the asynchronous modules should not take you more than 3-5 hours to complete, so if you get stuck, click to reveal and move on to the next thing.
 
 [jupyter]: https://jupyter.org/
 [mybinder]: https://mybinder.org/
