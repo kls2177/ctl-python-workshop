@@ -1,347 +1,431 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Part I: NumPy &#8212; Basic and Intermediate Python</title>
-    
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/intermediate/01_intermediate_python';</script>
     <link rel="canonical" href="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/01_intermediate_python.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Exercises: Part I" href="01_intermediate_exercises.html" />
     <link rel="prev" title="Module 2: Intermediate Python" href="intermediate_intro.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/01_intermediate_python.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Part I: NumPy" />
-<meta property="og:description" content="Part I: NumPy  Review of Module 1  Take a few minutes to review the content of Module 1. Module 2 builds on what was covered in Module 1.  To open a Python inte" />
-<meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
+    
+    
+    
+  </div>
   
-  <img src="../../_static/python-logo-master-v3-TM.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
   
   
-  <h1 class="site-logo" id="site-title">Basic and Intermediate Python</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/python-logo-master-v3-TM.png" class="logo__image only-light" alt="Basic and Intermediate Python - Home"/>
+    <script>document.write(`<img src="../../_static/python-logo-master-v3-TM.png" class="logo__image only-dark" alt="Basic and Intermediate Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Basic and Intermediate Python
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/intro.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/aboutthisbook.html">About this book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/howtousethisbook.html">How to use this book</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basic/basic_intro.html">Module 1: Basic Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic/01_basic_python.html">Part I: Introduction to Programming in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/01_basic_exercises.html">Exercises: Part I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/02_basic_python.html">Part II: Loops, Data Structures and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/02_basic_exercises.html">Exercises: Part II</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intermediate_intro.html">Module 2: Intermediate Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part I: NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_intermediate_exercises.html">Exercises: Part I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_intermediate_python.html">Part II: Matplotlib</a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_intermediate_python.html">Part III: Working with <em>Real Data</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_intermediate_exercises.html">Exercises: Part III</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reflection/reflection.html">Short Course Submission and Reflection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/kls2177/ctl-python-workshop/master?urlpath=tree/chapters/intermediate/01_intermediate_python.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
 </a>
-</div>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Basic and Intermediate Python
-  </a>
- </li>
-</ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/intro.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../basic/basic_intro.html">
-   Module 1: Basic Python
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="intermediate_intro.html">
-   Module 2: Intermediate Python
-  </a>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Part I: NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_intermediate_exercises.html">
-     Exercises: Part I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_intermediate_python.html">
-     Part II: Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_intermediate_python.html">
-     Part III: Working with
-     <em>
-      Real Data
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_intermediate_exercises.html">
-     Exercises: Part III
-    </a>
-   </li>
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../reflection/reflection.html">
-   Asynchronous Workshop Component Submission and Reflection
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/intermediate/01_intermediate_python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/intermediate/01_intermediate_python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-        <!-- Launch buttons -->
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/kls2177/ctl-python-workshop/master?urlpath=tree/chapters/intermediate/01_intermediate_python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/kls2177/ctl-python-workshop/blob/master/chapters/intermediate/01_intermediate_python.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-    </div>
 
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Part I: NumPy</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#review-of-module-1">
-   Review of Module 1
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#why-numpy">
-   1. Why
-   <code class="docutils literal notranslate">
-    <span class="pre">
-     NumPy
-    </span>
-   </code>
-   ?
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#importing-numpy">
-     1.1. Importing NumPy
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#ndarray">
-     1.2 NDArray
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#data-types">
-       1.2.1 Data Types
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#shape">
-       1.2.2 Shape
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#array-creation">
-     1.3 Array Creation
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#the-most-commonly-used-array-creation-functions">
-       <strong>
-        The most commonly used array creation functions
-       </strong>
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#indexing">
-     1.4 Indexing
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#array-operations">
-   2. Array Operations
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#broadcasting">
-     2.1 Broadcasting
-    </a>
-   </li>
-  </ul>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-module-1">Review of Module 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-numpy">1. Why <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">1.1. Importing NumPy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ndarray">1.2 NDArray</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">1.2.1 Data Types</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shape">1.2.2 Shape</a></li>
 </ul>
-
-        </nav>
-        
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-creation">1.3 Array Creation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-commonly-used-array-creation-functions"><strong>The most commonly used array creation functions</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">1.4 Indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">2. Array Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">2.1 Broadcasting</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="part-i-numpy">
-<h1>Part I: NumPy<a class="headerlink" href="#part-i-numpy" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="review-of-module-1">
-<h2>Review of Module 1<a class="headerlink" href="#review-of-module-1" title="Permalink to this headline">¶</a></h2>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="part-i-numpy">
+<h1>Part I: NumPy<a class="headerlink" href="#part-i-numpy" title="Permalink to this heading">#</a></h1>
+<section id="review-of-module-1">
+<h2>Review of Module 1<a class="headerlink" href="#review-of-module-1" title="Permalink to this heading">#</a></h2>
 <p>Take a few minutes to review the content of Module 1. Module 2 builds on what was covered in Module 1.</p>
 <ul class="simple">
 <li><p>To open a Python interpreter, type <code class="docutils literal notranslate"><span class="pre">python</span></code> in terminal.</p></li>
@@ -386,9 +470,9 @@
 </ul>
 </li>
 </ul>
-</div>
-<div class="section" id="why-numpy">
-<h2>1. Why <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?<a class="headerlink" href="#why-numpy" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="why-numpy">
+<h2>1. Why <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?<a class="headerlink" href="#why-numpy" title="Permalink to this heading">#</a></h2>
 <p>Let’s take a look at the example in the video.</p>
 <p>Imagine you want to multiply two lists, <code class="docutils literal notranslate"><span class="pre">[1,3,4]</span></code> and <code class="docutils literal notranslate"><span class="pre">[5,6,7]</span></code>, element by element. We can do this by looping over the elements of each list, multiplying them and then storing them in a new list.</p>
 <div class="cell docutils container">
@@ -429,8 +513,8 @@
 </div>
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> also allows us to store multi-dimensional data in a new data structure called an <em>array</em> (see below). For example, in climate science (my field), we are often working with data that has three spatial dimensions (latitude, longitude and height) as well as the time dimension.</p>
-<div class="section" id="importing-numpy">
-<h3>1.1. Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this headline">¶</a></h3>
+<section id="importing-numpy">
+<h3>1.1. Importing NumPy<a class="headerlink" href="#importing-numpy" title="Permalink to this heading">#</a></h3>
 <p>To use <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>, we first need to import it.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -451,14 +535,14 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.18.5&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1.23.2&#39;
 </pre></div>
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="ndarray">
-<h3>1.2 NDArray<a class="headerlink" href="#ndarray" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="ndarray">
+<h3>1.2 NDArray<a class="headerlink" href="#ndarray" title="Permalink to this heading">#</a></h3>
 <p>The fundamental data structure within <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> is called an NDArray (ND = <em>N</em>-dimensional).</p>
 <p>One way to create a NDArray by converting a regular Python list.</p>
 <div class="cell docutils container">
@@ -474,8 +558,8 @@
 </div>
 </div>
 </div>
-<div class="section" id="data-types">
-<h4>1.2.1 Data Types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h4>
+<section id="data-types">
+<h4>1.2.1 Data Types<a class="headerlink" href="#data-types" title="Permalink to this heading">#</a></h4>
 <p><code class="docutils literal notranslate"><span class="pre">dtype</span></code> defines what type of data is contained within an array.</p>
 <blockquote>
 <div><p><em>All elements within a NDArray must be the <strong>same type</strong>, unlike Python lists.</em></p>
@@ -505,9 +589,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="shape">
-<h4>1.2.2 Shape<a class="headerlink" href="#shape" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="shape">
+<h4>1.2.2 Shape<a class="headerlink" href="#shape" title="Permalink to this heading">#</a></h4>
 <p>Shape defines how many elements an array can contain within each dimension.</p>
 <p>To see the shape of an array, use the following command.</p>
 <div class="cell docutils container">
@@ -525,18 +609,24 @@
 </div>
 <p>So, we see that <code class="docutils literal notranslate"><span class="pre">a</span></code> has one dimension with 4 elements. Let’s try buidling another array with multiple dimensions. What is the shape <code class="docutils literal notranslate"><span class="pre">b</span></code>?</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># dimensional array</span>
 <span class="n">b</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">9</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">6</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">0</span><span class="p">]])</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(2, 4)
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>In general, an <span class="math notranslate nohighlight">\(N\)</span>-dimensional array has the shape of</p>
 <blockquote>
@@ -544,19 +634,24 @@
 </div></blockquote>
 <p><span class="math notranslate nohighlight">\(N\)</span> is the dimension count. <span class="math notranslate nohighlight">\(x_i\)</span> is the element count at <span class="math notranslate nohighlight">\(i^{th}\)</span> dimension.</p>
 <p>So, in the case of the above array, we start from the outer <code class="docutils literal notranslate"><span class="pre">[]</span></code> and work our way in. Within the first set of <code class="docutils literal notranslate"><span class="pre">[]</span></code>, we have 2 lists, so the number of elements in the Nth dimension is 2. Within the next set of <code class="docutils literal notranslate"><span class="pre">[]</span></code> we see that each list consists of 4 elements, so the number of elements in the <span class="math notranslate nohighlight">\(N\)</span>-1th dimension is 4. Thus, the shape is (2,4).</p>
-</div>
-</div>
-<div class="section" id="array-creation">
-<h3>1.3 Array Creation<a class="headerlink" href="#array-creation" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="array-creation">
+<h3>1.3 Array Creation<a class="headerlink" href="#array-creation" title="Permalink to this heading">#</a></h3>
 <p>Above, we created an NDarray by converting lists to arrays using the <code class="docutils literal notranslate"><span class="pre">np.array()</span></code> function. But, <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> also provides many helpful functions to let you quickly create arrays from scratch.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 3x3 array filled with zeros</span>
 <span class="n">zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">zeros</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0. 0. 0.]
  [0. 0. 0.]
@@ -564,32 +659,44 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Creating an array of zeros is useful of initializing an array that you will then populate.</p>
 <p>You can also specify the data type. In the example below, we are creating an array of zeros, but we want the data type to be complex.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c_zeros</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">complex64</span><span class="p">)</span> <span class="c1"># 2x2 array with complex zeros</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c_zeros</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[0.+0.j 0.+0.j]
  [0.+0.j 0.+0.j]]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>We can also create an array of ones. This is useful if we need an array of a particular constant. You can simply multiply the entire array by the constant of interest.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4x5 array filled with ones</span>
 <span class="n">ones</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">ones</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[1. 1. 1. 1. 1.]
  [1. 1. 1. 1. 1.]
@@ -598,15 +705,21 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 4x5 array filled with twos</span>
 <span class="n">twos</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">((</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">twos</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[2. 2. 2. 2. 2.]
  [2. 2. 2. 2. 2.]
@@ -615,16 +728,22 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>An alternative way to fill an array with a constant is to use <code class="docutils literal notranslate"><span class="pre">np.full()</span></code>.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># 2x7x3 array filled with e (use the np.e function to call the value for e)</span>
 <span class="n">e</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">full</span><span class="p">((</span><span class="mi">2</span><span class="p">,</span><span class="mi">7</span><span class="p">,</span><span class="mi">3</span><span class="p">),</span> <span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[[2.71828183 2.71828183 2.71828183]
   [2.71828183 2.71828183 2.71828183]
@@ -644,22 +763,29 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>You can also use the <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.arange.html"><code class="docutils literal notranslate"><span class="pre">np.arange()</span></code></a> function to create a 1-D array of consecutive numbers. <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> is similar to the <code class="docutils literal notranslate"><span class="pre">range()</span></code> function we discussed in Module 1.</p>
 <p>In the example below, what will the array look like?</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># array using np.arange</span>
 <span class="n">r</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[5 6 7 8]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>You can also specify the spacing between values within the range using the additional <code class="docutils literal notranslate"><span class="pre">step</span></code> argument:</p>
 <div class="cell docutils container">
@@ -672,35 +798,55 @@
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Help on built-in function arange in module numpy:
 
 arange(...)
-    arange([start,] stop[, step,], dtype=None)
+    arange([start,] stop[, step,], dtype=None, *, like=None)
     
     Return evenly spaced values within a given interval.
     
-    Values are generated within the half-open interval ``[start, stop)``
-    (in other words, the interval including `start` but excluding `stop`).
-    For integer arguments the function is equivalent to the Python built-in
-    `range` function, but returns an ndarray rather than a list.
+    ``arange`` can be called with a varying number of positional arguments:
     
-    When using a non-integer step, such as 0.1, the results will often not
-    be consistent.  It is better to use `numpy.linspace` for these cases.
+    * ``arange(stop)``: Values are generated within the half-open interval
+      ``[0, stop)`` (in other words, the interval including `start` but
+      excluding `stop`).
+    * ``arange(start, stop)``: Values are generated within the half-open
+      interval ``[start, stop)``.
+    * ``arange(start, stop, step)`` Values are generated within the half-open
+      interval ``[start, stop)``, with spacing between values given by
+      ``step``.
+    
+    For integer arguments the function is roughly equivalent to the Python
+    built-in :py:class:`range`, but returns an ndarray rather than a ``range``
+    instance.
+    
+    When using a non-integer step, such as 0.1, it is often better to use
+    `numpy.linspace`.
+    
+    See the Warning sections below for more information.
     
     Parameters
     ----------
-    start : number, optional
+    start : integer or real, optional
         Start of interval.  The interval includes this value.  The default
         start value is 0.
-    stop : number
+    stop : integer or real
         End of interval.  The interval does not include this value, except
         in some cases where `step` is not an integer and floating point
         round-off affects the length of `out`.
-    step : number, optional
+    step : integer or real, optional
         Spacing between values.  For any output `out`, this is the distance
         between two adjacent values, ``out[i+1] - out[i]``.  The default
         step size is 1.  If `step` is specified as a position argument,
         `start` must also be given.
-    dtype : dtype
+    dtype : dtype, optional
         The type of the output array.  If `dtype` is not given, infer the data
         type from the other input arguments.
+    like : array_like, optional
+        Reference object to allow the creation of arrays which are not
+        NumPy arrays. If an array-like passed in as ``like`` supports
+        the ``__array_function__`` protocol, the result will be defined
+        by it. In this case, it ensures the creation of an array object
+        compatible with that passed in via this argument.
+    
+        .. versionadded:: 1.20.0
     
     Returns
     -------
@@ -711,6 +857,39 @@ arange(...)
         ``ceil((stop - start)/step)``.  Because of floating point overflow,
         this rule may result in the last element of `out` being greater
         than `stop`.
+    
+    Warnings
+    --------
+    The length of the output might not be numerically stable.
+    
+    Another stability issue is due to the internal implementation of
+    `numpy.arange`.
+    The actual step value used to populate the array is
+    ``dtype(start + step) - dtype(start)`` and not `step`. Precision loss
+    can occur here, due to casting or due to using floating points when
+    `start` is much larger than `step`. This can lead to unexpected
+    behaviour. For example::
+    
+      &gt;&gt;&gt; np.arange(0, 5, 0.5, dtype=int)
+      array([0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+      &gt;&gt;&gt; np.arange(-3, 3, 0.5, dtype=int)
+      array([-3, -2, -1,  0,  1,  2,  3,  4,  5,  6,  7,  8])
+    
+    In such cases, the use of `numpy.linspace` should be preferred.
+    
+    The built-in :py:class:`range` generates :std:doc:`Python built-in integers
+    that have arbitrary size &lt;c-api/long&gt;`, while `numpy.arange` produces
+    `numpy.int32` or `numpy.int64` numbers. This may result in incorrect
+    results for large integer values::
+    
+      &gt;&gt;&gt; power = 40
+      &gt;&gt;&gt; modulo = 10000
+      &gt;&gt;&gt; x1 = [(n ** power) % modulo for n in range(8)]
+      &gt;&gt;&gt; x2 = [(n ** power) % modulo for n in np.arange(8)]
+      &gt;&gt;&gt; print(x1)
+      [0, 1, 7776, 8801, 6176, 625, 6576, 4001]  # correct
+      &gt;&gt;&gt; print(x2)
+      [0, 1, 7776, 7185, 0, 5969, 4816, 3361]  # incorrect
     
     See Also
     --------
@@ -749,34 +928,51 @@ arange(...)
 <p><code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">np.arange()</span></code> except that the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value is included and rather than specify the <code class="docutils literal notranslate"><span class="pre">step</span></code> you specify the number of elements you want. These elements will be linearly spaced.</p>
 <p>So, in the example below, what value will the array start with? Stop with? How many values will there be?</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Linearly spaced array</span>
 <span class="n">lin</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">float</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lin</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 0.  2.  4.  6.  8. 10. 12. 14. 16. 18.]
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/m0/hylw02j53db4s63gklflxs800000gn/T/ipykernel_80949/3676009425.py:2: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  lin = np.linspace(0, 18, 10, dtype=np.float)
+</pre></div>
 </div>
+</div>
+</details>
 </div>
 <p>Now, change the above so that the <code class="docutils literal notranslate"><span class="pre">stop</span></code> value is 19. What happens? Keep <code class="docutils literal notranslate"><span class="pre">stop</span></code> at 19 and change the number of elements to 20. What happens?</p>
 <p><code class="docutils literal notranslate"><span class="pre">np.logspace()</span></code> is similar to <code class="docutils literal notranslate"><span class="pre">np.linspace()</span></code> except that the number will be spaced logarithmically.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Log spaced array</span>
 <span class="n">log</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> 
 <span class="nb">print</span><span class="p">(</span><span class="n">log</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.e+00 1.e+02 1.e+04 1.e+06 1.e+08 1.e+10 1.e+12 1.e+14 1.e+16 1.e+18]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -795,8 +991,8 @@ arange(...)
 </div>
 </div>
 <p>Here is a summary of the most commonly used array creation functions:</p>
-<div class="section" id="the-most-commonly-used-array-creation-functions">
-<h4><strong>The most commonly used array creation functions</strong><a class="headerlink" href="#the-most-commonly-used-array-creation-functions" title="Permalink to this headline">¶</a></h4>
+<section id="the-most-commonly-used-array-creation-functions">
+<h4><strong>The most commonly used array creation functions</strong><a class="headerlink" href="#the-most-commonly-used-array-creation-functions" title="Permalink to this heading">#</a></h4>
 <blockquote>
 <div><ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">np.empty(shape[,</span> <span class="pre">dtype,</span> <span class="pre">order])</span></code> - Create an empty array with no values.</p></li>
@@ -823,10 +1019,10 @@ arange(...)
 <li><p><code class="docutils literal notranslate"><span class="pre">np.geomspace(start,</span> <span class="pre">stop[,</span> <span class="pre">num,</span> <span class="pre">endpoint,</span> <span class="pre">dtype])</span></code> - Spaced evenly on log scale (geometric progression)</p></li>
 </ul>
 </div></blockquote>
-</div>
-</div>
-<div class="section" id="indexing">
-<h3>1.4 Indexing<a class="headerlink" href="#indexing" title="Permalink to this headline">¶</a></h3>
+</section>
+</section>
+<section id="indexing">
+<h3>1.4 Indexing<a class="headerlink" href="#indexing" title="Permalink to this heading">#</a></h3>
 <p>Indexing for <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> arrays is very similar to Python lists, except that we have to index for more than one dimension.</p>
 <p>Let’s start with the array <code class="docutils literal notranslate"><span class="pre">b</span></code> that we defined above.</p>
 <div class="cell docutils container">
@@ -875,10 +1071,10 @@ arange(...)
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="array-operations">
-<h2>2. Array Operations<a class="headerlink" href="#array-operations" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="array-operations">
+<h2>2. Array Operations<a class="headerlink" href="#array-operations" title="Permalink to this heading">#</a></h2>
 <p>Being able to perform element-wise operations is what makes <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> so powerful. Let’s take a look by first defining two arrays.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -891,37 +1087,49 @@ arange(...)
 </div>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> allows for basic arithmetic operations such as addition and multiplication. What do you get if you add <code class="docutils literal notranslate"><span class="pre">k</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> element-wise?</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">k</span> <span class="o">+</span> <span class="n">j</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3. 4. 5.]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>What do you get if you multiply <code class="docutils literal notranslate"><span class="pre">k</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> element-wise?</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">c</span> <span class="o">=</span> <span class="n">k</span> <span class="o">*</span> <span class="n">j</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[2. 4. 6.]
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Notice the result of <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">j</span></code> might be weird if you are familiar with matrices.</p>
 <p><strong>Array != Matrix</strong></p>
 <p>Array operations are element-wise, which means <code class="docutils literal notranslate"><span class="pre">k</span> <span class="pre">*</span> <span class="pre">j</span></code> simply multiplies the elements with the same index. In most cases, you would operate on two arrays with the same shape (<code class="docutils literal notranslate"><span class="pre">k</span></code> and <code class="docutils literal notranslate"><span class="pre">j</span></code> have the same shape). You can, however, operate on two different shaped arrays under certain conditions. This brings us to <strong>broadcasting</strong>.</p>
-<div class="section" id="broadcasting">
-<h3>2.1 Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this headline">¶</a></h3>
+<section id="broadcasting">
+<h3>2.1 Broadcasting<a class="headerlink" href="#broadcasting" title="Permalink to this heading">#</a></h3>
 <p>Broadcasting allows us to operate on differently shaped arrays, with some constraints. Broadcasting means that array operations occur within C instead of Python, which is much faster.</p>
 <p><img alt="" src="https://www.evernote.com/l/Aq2wONNsbSFJ_Z7_JyPS3U5T3QQ3ULrYrVgB/image.png" /></p>
 <p><img alt="" src="https://www.evernote.com/l/Aq3NWqDzrodAxJe2An6QGBOmGDDWtJFA-5MB/image.png" /></p>
@@ -930,9 +1138,9 @@ arange(...)
 <blockquote>
 <div><p>If you wish to learn more, follow this <a class="reference external" href="http://scipy.github.io/old-wiki/pages/EricsBroadcastingDoc">link</a>.</p>
 </div></blockquote>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -946,7 +1154,7 @@ arange(...)
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapters/intermediate"
         },
         predefinedOutput: true
@@ -954,38 +1162,121 @@ arange(...)
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="intermediate_intro.html" title="previous page">Module 2: Intermediate Python</a>
-    <a class='right-next' id="next-link" href="01_intermediate_exercises.html" title="next page">Exercises: Part I</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Karen Smith<br/>
-        
-            &copy; Copyright 2023.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="intermediate_intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Module 2: Intermediate Python</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="01_intermediate_exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises: Part I</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-of-module-1">Review of Module 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#why-numpy">1. Why <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-numpy">1.1. Importing NumPy</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ndarray">1.2 NDArray</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#data-types">1.2.1 Data Types</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#shape">1.2.2 Shape</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#array-creation">1.3 Array Creation</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#the-most-commonly-used-array-creation-functions"><strong>The most commonly used array creation functions</strong></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#indexing">1.4 Indexing</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#array-operations">2. Array Operations</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#broadcasting">2.1 Broadcasting</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Karen Smith
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-    
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>

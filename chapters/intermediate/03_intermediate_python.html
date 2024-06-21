@@ -1,319 +1,436 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html lang="en" data-content_root="" >
+
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Part III: Working with Real Data &#8212; Basic and Intermediate Python</title>
-    
-  <link rel="stylesheet" href="../../_static/css/index.73d71520a4ca3b99cfee5594769eaaae.css">
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    
-      
-  <link rel="stylesheet"
-    href="../../_static/vendor/open-sans_all/1.44.1/index.css">
-  <link rel="stylesheet"
-    href="../../_static/vendor/lato_latin-ext/1.44.1/index.css">
-
-    
-    <link rel="stylesheet" href="../../_static/sphinx-book-theme.2d2078699c18a0efb88233928e1cf6ed.css" type="text/css" />
-    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
-    
-  <link rel="preload" as="script" href="../../_static/js/index.3da636dd464baa7582d2.js">
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
     <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/language_data.js"></script>
-    <script src="../../_static/togglebutton.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../../_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
-    <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
-    </script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/intermediate/03_intermediate_python';</script>
     <link rel="canonical" href="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/03_intermediate_python.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Exercises: Part III" href="03_intermediate_exercises.html" />
     <link rel="prev" title="Part II: Matplotlib" href="02_intermediate_python.html" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="en" />
-
-
-<!-- Opengraph tags -->
-<meta property="og:url"         content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/chapters/intermediate/03_intermediate_python.html" />
-<meta property="og:type"        content="article" />
-<meta property="og:title"       content="Part III: Working with Real Data" />
-<meta property="og:description" content="Part III: Working with Real Data  We have learned a lot about programming in Python - the syntax and the functionality - but, for the most part, we have been us" />
-<meta property="og:image"       content="https://kls2177.github.io/ctl-python-workshop/chapters/index.html/_static/python-logo-master-v3-TM.png" />
-
-<meta name="twitter:card" content="summary" />
-
-
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
-    
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    <div class="container-xl">
-      <div class="row">
-          
-<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
     
-        <div class="navbar-brand-box">
-<a class="navbar-brand text-wrap" href="../../index.html">
+    
+    
+    
+  </div>
   
-  <img src="../../_static/python-logo-master-v3-TM.png" class="logo" alt="logo">
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
   
   
-  <h1 class="site-logo" id="site-title">Basic and Intermediate Python</h1>
   
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/python-logo-master-v3-TM.png" class="logo__image only-light" alt="Basic and Intermediate Python - Home"/>
+    <script>document.write(`<img src="../../_static/python-logo-master-v3-TM.png" class="logo__image only-dark" alt="Basic and Intermediate Python - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Basic and Intermediate Python
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../introduction/intro.html">Introduction</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/aboutthisbook.html">About this book</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../introduction/howtousethisbook.html">How to use this book</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../basic/basic_intro.html">Module 1: Basic Python</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../basic/01_basic_python.html">Part I: Introduction to Programming in Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/01_basic_exercises.html">Exercises: Part I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/02_basic_python.html">Part II: Loops, Data Structures and Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../basic/02_basic_exercises.html">Exercises: Part II</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intermediate_intro.html">Module 2: Intermediate Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="01_intermediate_python.html">Part I: NumPy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01_intermediate_exercises.html">Exercises: Part I</a></li>
+<li class="toctree-l2"><a class="reference internal" href="02_intermediate_python.html">Part II: Matplotlib</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Part III: Working with <em>Real Data</em></a></li>
+<li class="toctree-l2"><a class="reference internal" href="03_intermediate_exercises.html">Exercises: Part III</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../reflection/reflection.html">Short Course Submission and Reflection</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-launch-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Launch interactive content">
+    <i class="fas fa-rocket"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://mybinder.org/v2/gh/kls2177/ctl-python-workshop/master?urlpath=tree/chapters/intermediate/03_intermediate_python.ipynb" target="_blank"
+   class="btn btn-sm dropdown-item"
+   title="Launch onBinder"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="btn__text-container">Binder</span>
 </a>
-</div>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="initThebeSBT()"
+  class="btn btn-sm btn-launch-thebe dropdown-item"
+  title="Launch Thebe"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form>
-
-<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
-  <ul class="nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../index.html">
-   Basic and Intermediate Python
-  </a>
- </li>
-</ul>
-<ul class="current nav sidenav_l1">
- <li class="toctree-l1">
-  <a class="reference internal" href="../introduction/intro.html">
-   Introduction
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../basic/basic_intro.html">
-   Module 1: Basic Python
-  </a>
- </li>
- <li class="toctree-l1 current active">
-  <a class="reference internal" href="intermediate_intro.html">
-   Module 2: Intermediate Python
-  </a>
-  <ul class="current">
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_intermediate_python.html">
-     Part I: NumPy
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="01_intermediate_exercises.html">
-     Exercises: Part I
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="02_intermediate_python.html">
-     Part II: Matplotlib
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     Part III: Working with
-     <em>
-      Real Data
-     </em>
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="03_intermediate_exercises.html">
-     Exercises: Part III
-    </a>
-   </li>
+<span class="btn__icon-container">
+  <i class="fas fa-play"></i>
+  </span>
+<span class="btn__text-container">Live Code</span>
+</button>
+</li>
+      
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../reflection/reflection.html">
-   Asynchronous Workshop Component Submission and Reflection
-  </a>
- </li>
-</ul>
-
-</nav>
-
- <!-- To handle the deprecated key -->
-
-<div class="navbar_extra_footer">
-  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-</div>
-
 </div>
 
 
-          
 
 
-          
-<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
-    
-    <div class="row topbar fixed-top container-xl">
-    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
-    </div>
-    <div class="col pl-2 topbar-main">
-        
-        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
-            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
-            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
-            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
-            <i class="fas fa-bars"></i>
-            <i class="fas fa-arrow-left"></i>
-            <i class="fas fa-arrow-up"></i>
-        </button>
-        
-        <div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
-            class="fas fa-download"></i></button>
-
-    
-    <div class="dropdown-buttons">
-        <!-- ipynb file if we had a myst markdown file -->
-        
-        <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../../_sources/chapters/intermediate/03_intermediate_python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
-        <!-- Download PDF via print -->
-        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
-            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
-    </div>
-    
-</div>
-        <!-- Source interaction buttons -->
 
 
-        <!-- Full screen (wrap in <a> to have style consistency -->
-        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
-                data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
-                title="Fullscreen mode"><i
-                    class="fas fa-expand"></i></button></a>
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/intermediate/03_intermediate_python.ipynb" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-        <!-- Launch buttons -->
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.ipynb</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/kls2177/ctl-python-workshop/master?urlpath=tree/chapters/intermediate/03_intermediate_python.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        <a class="colab-button" href="https://colab.research.google.com/github/kls2177/ctl-python-workshop/blob/master/chapters/intermediate/03_intermediate_python.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
-                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
-                    src="../../_static/images/logo_colab.png"
-                    alt="Interact on Colab">Colab</button></a>
-        
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
-        
-    </div>
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
 </div>
 
-    </div>
 
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Part III: Working with Real Data</h1>
     <!-- Table of contents -->
-    <div class="d-none d-md-block col-md-2 bd-toc show">
-        
-        <div class="tocsection onthispage pt-5 pb-3">
-            <i class="fas fa-list"></i> Contents
-        </div>
-        <nav id="bd-toc-nav">
-            <ul class="nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#load-the-data">
-   1. Load the Data
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#preliminary-data-exploration">
-   2. Preliminary Data Exploration
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#masked-arrays">
-     2.1 Masked Arrays
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#plotting-the-data">
-   3. Plotting the Data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#more-plotting-options">
-     3.1 More Plotting Options
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-statistical-analysis">
-   4. Simple Statistical Analysis
-  </a>
- </li>
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">1. Load the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-data-exploration">2. Preliminary Data Exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-arrays">2.1 Masked Arrays</a></li>
 </ul>
-
-        </nav>
-        
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data">3. Plotting the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-plotting-options">3.1 More Plotting Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-statistical-analysis">4. Simple Statistical Analysis</a></li>
+</ul>
+            </nav>
+        </div>
     </div>
 </div>
-    <div id="main-content" class="row">
-        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
-        
-              <div>
+
+              
                 
-  <div class="section" id="part-iii-working-with-real-data">
-<h1>Part III: Working with <em>Real Data</em><a class="headerlink" href="#part-iii-working-with-real-data" title="Permalink to this headline">¶</a></h1>
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="part-iii-working-with-real-data">
+<h1>Part III: Working with <em>Real Data</em><a class="headerlink" href="#part-iii-working-with-real-data" title="Permalink to this heading">#</a></h1>
 <p>We have learned a lot about programming in Python - the syntax and the functionality - but, for the most part, we have been using fairly simple examples and datasets. So, let’s now take a look at how we might use Python to work with some real data.</p>
 <p>Download the following <a class="reference external" href="https://github.com/kls2177/ccia_files/blob/master/argo_float_4901412.npz?raw=true">file</a> and save it in the same directory that you are working in. The data we will be working with is ocean temperature, salinity, and pressure from an <a class="reference external" href="https://argo.ucsd.edu/">Argo float</a>.</p>
 <p>Argo floats are amazing! They are autonomous floats that drift and dive throughout the ocean (see <a class="reference internal" href="#argo"><span class="std std-ref">Figure</span></a>) relaying information about temperature and salinity to satellites.</p>
-<div class="figure align-default" id="argo">
+<figure class="align-default" id="argo">
 <a class="reference internal image-reference" href="../../_images/argo.png"><img alt="../../_images/argo.png" src="../../_images/argo.png" style="width: 877.25px; height: 620.25px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 4 </span><span class="caption-text">Map of the position of operational Argo floats as of July 2020.</span><a class="headerlink" href="#argo" title="Permalink to this image">¶</a></p>
-</div>
-<div class="section" id="load-the-data">
-<h2>1. Load the Data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h2>
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Map of the position of operational Argo floats as of July 2020.</span><a class="headerlink" href="#argo" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<section id="load-the-data">
+<h2>1. Load the Data<a class="headerlink" href="#load-the-data" title="Permalink to this heading">#</a></h2>
 <p>The first thing we need to do is import <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> and <code class="docutils literal notranslate"><span class="pre">Matplotlib</span></code>. See if you can remember the syntax for importing these packages.</p>
 <div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import packages</span>
 <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -321,6 +438,7 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Now, let’s load the file. The <code class="docutils literal notranslate"><span class="pre">.npz</span></code> file format is a <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> file format, so we can easily load this file using the <code class="docutils literal notranslate"><span class="pre">np.load()</span></code> function. Note that the raw Argo data does not come in such a nice file format - I made this part a bit easy for us :)</p>
 <div class="cell docutils container">
@@ -331,9 +449,9 @@
 </div>
 </div>
 </div>
-</div>
-<div class="section" id="preliminary-data-exploration">
-<h2>2. Preliminary Data Exploration<a class="headerlink" href="#preliminary-data-exploration" title="Permalink to this headline">¶</a></h2>
+</section>
+<section id="preliminary-data-exploration">
+<h2>2. Preliminary Data Exploration<a class="headerlink" href="#preliminary-data-exploration" title="Permalink to this heading">#</a></h2>
 <p>We can examine the data using some simple commands. Note that <code class="docutils literal notranslate"><span class="pre">.npz</span></code> files store NDarrays in a dictionary format. We can identify the different dictionary categories, using the below command.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -351,11 +469,16 @@
 <p>So, we have seven categories. <strong>S</strong> is for salinity, <strong>T</strong> is for temperature and <strong>P</strong> is for pressure.</p>
 <p>We can access the array in each category just as we did for dictionaries.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[[18.97400093 18.43700027 19.09900093 ... 19.11300087 21.82299995
   20.13100052]
@@ -373,6 +496,7 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>This looks like a lot of data. Let’s take a look at the shape of the <code class="docutils literal notranslate"><span class="pre">T</span></code> array.</p>
 <div class="cell docutils container">
@@ -389,7 +513,12 @@
 </div>
 <p>Ok, it looks like we have a 2-D array. What do those two dimensions correspond to? See if you can try to figure out what these dimensions correspond to by printing out the shape of other variables. Click below to check your answer.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Shape of array in &#39;levels&#39; category</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;levels&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
 
@@ -400,6 +529,12 @@
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(78,)
 [ 0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15 16 17 18 19 20 21 22 23
@@ -409,9 +544,15 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We see that we simply have a set of consecutively numbered levels.</span>
 <span class="c1"># What about the other dimension? </span>
 
@@ -425,6 +566,12 @@
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(75,)
 [&#39;2012-07-13T22:33:06.019200000&#39; &#39;2012-07-23T22:54:59.990400000&#39;
@@ -468,9 +615,15 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Looking at the dates, we see that data is collected every 20 days.</span>
 
 <span class="c1"># Finally, what are the dimensions of the remaining variables?</span>
@@ -483,6 +636,12 @@
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(78, 75)
 (78, 75)
@@ -491,11 +650,12 @@
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Ok, so now we have a sense of how our data is organized. Often we know this before we even load the data, but sometimes we don’t.</p>
 <p>Let’s perform a few other <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> operations on data to get a sense of what our data looks like. For example, let’s find the maximum temperature value in our data set.</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># find the maximum</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">argo</span><span class="p">[</span><span class="s1">&#39;T&#39;</span><span class="p">]))</span>
 
@@ -504,12 +664,18 @@
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
 nan
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Oops! Why are we getting <code class="docutils literal notranslate"><span class="pre">nan</span></code> (not-a-number) as the output? This usually means that there are invalid entries (missing data) within column <code class="docutils literal notranslate"><span class="pre">T</span></code>.</p>
 <p>If we examine the <code class="docutils literal notranslate"><span class="pre">T</span></code> column, you should see some entries are nan.</p>
@@ -543,8 +709,8 @@ nan
 <li><p>Manually assign place-holder values? This can be tedious.</p></li>
 </ul>
 <p><code class="docutils literal notranslate"><span class="pre">NumPy</span></code> offers a convenient approach to dealing with <code class="docutils literal notranslate"><span class="pre">nan</span></code> values: We can use something called <a class="reference external" href="https://numpy.org/doc/stable/reference/maskedarray.generic.html"><strong>Masked Arrays</strong></a>.</p>
-<div class="section" id="masked-arrays">
-<h3>2.1 Masked Arrays<a class="headerlink" href="#masked-arrays" title="Permalink to this headline">¶</a></h3>
+<section id="masked-arrays">
+<h3>2.1 Masked Arrays<a class="headerlink" href="#masked-arrays" title="Permalink to this heading">#</a></h3>
 <p>Here we will “mask” out the invalid or <code class="docutils literal notranslate"><span class="pre">nan</span></code> values.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -587,21 +753,32 @@ nan
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[ 1.  2.  3. nan  5.]
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/var/folders/m0/hylw02j53db4s63gklflxs800000gn/T/ipykernel_80974/2018774611.py:2: DeprecationWarning: `np.float` is a deprecated alias for the builtin `float`. To silence this warning, use `float` by itself. Doing this will not modify any behavior and is safe. If you specifically wanted the numpy scalar type, use `np.float64` here.
+Deprecated in NumPy 1.20; for more details and guidance: https://numpy.org/devdocs/release/1.20.0-notes.html#deprecations
+  mx = np.array([1,2,3,np.float(&#39;nan&#39;),5])
+</pre></div>
+</div>
 </div>
 </div>
 <p>If we try to compute the mean, for example, what will we get?</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># calculate the mean of mx</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>nan
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>We get a meaningless answer.</p>
 <p>Instead, let’s create a mask that will tell <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> to ignore the element with the <code class="docutils literal notranslate"><span class="pre">nan</span></code> value.</p>
@@ -621,16 +798,22 @@ nan
 </div>
 <p>Now, what happens when we try to compute the mean?</p>
 <div class="cell tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">mx</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
 </pre></div>
 </div>
 </div>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.75
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <p>Masked arrays are very powerful and can help to save a lot of time when dealing with missing data.</p>
 <p>Ok, now back to our Argo data. We can now mask out all the <code class="docutils literal notranslate"><span class="pre">nan</span></code> values!</p>
@@ -645,15 +828,20 @@ nan
 </div>
 </div>
 </div>
-</div>
-</div>
-<div class="section" id="plotting-the-data">
-<h2>3. Plotting the Data<a class="headerlink" href="#plotting-the-data" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="plotting-the-data">
+<h2>3. Plotting the Data<a class="headerlink" href="#plotting-the-data" title="Permalink to this heading">#</a></h2>
 <p>First, let’s plot some simple time series of our data. Time series are line plots with time on the x-axis and the variable of interest on the y-axis.</p>
 <p>To plot time series of this data, we have to pick a level that we are going to plot. Let’s pick the surface (level 0) and a level at-depth (level 60) and plot time series of <code class="docutils literal notranslate"><span class="pre">T</span></code> and <code class="docutils literal notranslate"><span class="pre">S</span></code>. Plot the two levels on the same plot for each variable.</p>
 <p>Before you click to reveal, try this on your own. Once you have something, first click to reveal the output and see if your plot looks similar to mine. If you’re stuck, click to reveal the code.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># define figure size</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
 
@@ -674,31 +862,50 @@ nan
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;psu&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/03_intermediate_python_33_1.png" src="../../_images/03_intermediate_python_33_1.png" />
+<img alt="../../_images/aee1678cc1fbd23cf90e9dc306431f051340ed758485ea85d9cae6f2ded0dfb6.png" src="../../_images/aee1678cc1fbd23cf90e9dc306431f051340ed758485ea85d9cae6f2ded0dfb6.png" />
 </div>
+</details>
 </div>
 <p>Do you see the seasonal cycle in the surface temperature data? Cool!</p>
 <p>Now, let’s do a scatter plot. A <em>T-S</em> plot is a common way to plot ocean properties. Try it on your own: google “matplotlib scatter plot” to find the command.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># create a scatter plot</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span><span class="n">S</span><span class="p">,</span> <span class="n">T</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f85b034ce50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x1117a3a00&gt;
 </pre></div>
 </div>
-<img alt="../../_images/03_intermediate_python_35_1.png" src="../../_images/03_intermediate_python_35_1.png" />
+<img alt="../../_images/2c2f4a9ded98f029c1db92d90d671b403cf4d279fb5d5498cdbab426ee6b61e4.png" src="../../_images/2c2f4a9ded98f029c1db92d90d671b403cf4d279fb5d5498cdbab426ee6b61e4.png" />
 </div>
+</details>
 </div>
-<div class="section" id="more-plotting-options">
-<h3>3.1 More Plotting Options<a class="headerlink" href="#more-plotting-options" title="Permalink to this headline">¶</a></h3>
+<section id="more-plotting-options">
+<h3>3.1 More Plotting Options<a class="headerlink" href="#more-plotting-options" title="Permalink to this heading">#</a></h3>
 <p>Let’s play around with matplotlib! It is more powerful than you think.</p>
 <p>Try to style your scatter plot above:</p>
 <ul class="simple">
@@ -712,7 +919,12 @@ nan
 </ul>
 <p>If you get stuck, click to reveal.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with title, labels and color bar</span>
 
 <span class="c1"># change font size</span>
@@ -733,19 +945,31 @@ nan
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<img alt="../../_images/03_intermediate_python_37_0.png" src="../../_images/03_intermediate_python_37_0.png" />
+<img alt="../../_images/34471dd5378e6f704cb134277d0a31a50b069bf551bb720a2554a403b5727bdc.png" src="../../_images/34471dd5378e6f704cb134277d0a31a50b069bf551bb720a2554a403b5727bdc.png" />
 </div>
+</details>
 </div>
-</div>
-</div>
-<div class="section" id="simple-statistical-analysis">
-<h2>4. Simple Statistical Analysis<a class="headerlink" href="#simple-statistical-analysis" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="simple-statistical-analysis">
+<h2>4. Simple Statistical Analysis<a class="headerlink" href="#simple-statistical-analysis" title="Permalink to this heading">#</a></h2>
 <p>Finally, let’s do a bit of statistical analysis of our data. <code class="docutils literal notranslate"><span class="pre">NumPy</span></code> has several <a class="reference external" href="https://numpy.org/doc/stable/reference/routines.statistics.html">statistical functions</a> that we can use.</p>
 <p>Let’s see whether there is a clear relationship between latitude and surface salinity, i.e. does the surface salinity change as the float travels northward?</p>
 <p>To investigate this, let’s first do a scatter plot of these two variabiles. Try on your own first.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with title, labels and color bar</span>
 
 <span class="c1"># change font size</span>
@@ -765,9 +989,16 @@ nan
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<img alt="../../_images/03_intermediate_python_39_0.png" src="../../_images/03_intermediate_python_39_0.png" />
+<img alt="../../_images/d4649353f7ed5a2ed6c9d6a3449df454d566409e389312f52f1c811b2debe9ea.png" src="../../_images/d4649353f7ed5a2ed6c9d6a3449df454d566409e389312f52f1c811b2debe9ea.png" />
 </div>
+</details>
 </div>
 <p>Looks like there is a fairly linear relationship between latitude and surface salinity with salinity decreasing the further north the float travels.</p>
 <p>Let’s fit a line to this relationship using <code class="docutils literal notranslate"><span class="pre">np.polyfit()</span></code> and <code class="docutils literal notranslate"><span class="pre">np.polyval()</span></code>.</p>
@@ -822,7 +1053,12 @@ nan
 <p>Wow! Latitude explains about 74% for the variance in surface salinity.</p>
 <p>Now, let’s add the linear fit and the <em>R</em>-squared information to our plot (as text). One way to add the text is to add it to the legend label. Try it on your own first.</p>
 <div class="cell tag_hide-input tag_hide-output docutils container">
-<div class="cell_input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input above-output-prompt docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Plot with title, labels and color bar</span>
 
 <span class="c1"># change font size</span>
@@ -846,14 +1082,21 @@ nan
 </pre></div>
 </div>
 </div>
+</details>
+<details class="hide below-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell output</span>
+<span class="expanded">Hide code cell output</span>
+</summary>
 <div class="cell_output docutils container">
-<img alt="../../_images/03_intermediate_python_47_0.png" src="../../_images/03_intermediate_python_47_0.png" />
+<img alt="../../_images/29e39b12f0c352ad18bab7fd09320ad4c08f28095792011ee7468246f1f9d8e4.png" src="../../_images/29e39b12f0c352ad18bab7fd09320ad4c08f28095792011ee7468246f1f9d8e4.png" />
 </div>
+</details>
 </div>
 <p>This is just a quick sampling of what you can do with <code class="docutils literal notranslate"><span class="pre">NumPy</span></code>. More sophisticated statistical and numerical analysis can be done with other Python packages, such as <a class="reference external" href="https://www.scipy.org/"><code class="docutils literal notranslate"><span class="pre">SciPy</span></code></a> and <a class="reference external" href="https://www.statsmodels.org/stable/index.html"><code class="docutils literal notranslate"><span class="pre">statsmodels</span></code></a>.</p>
 <p>Now, it’s your turn to try some simple plotting and analysis.</p>
-</div>
-</div>
+</section>
+</section>
 
     <script type="text/x-thebe-config">
     {
@@ -867,7 +1110,7 @@ nan
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapters/intermediate"
         },
         predefinedOutput: true
@@ -875,38 +1118,112 @@ nan
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-        </div>
-    </div>
-    
-    
-    <div class='prev-next-bottom'>
-        
-    <a class='left-prev' id="prev-link" href="02_intermediate_python.html" title="previous page">Part II: Matplotlib</a>
-    <a class='right-next' id="next-link" href="03_intermediate_exercises.html" title="next page">Exercises: Part III</a>
 
-    </div>
-    <footer class="footer mt-5 mt-md-0">
-    <div class="container">
-      <p>
-        
-          By Karen Smith<br/>
-        
-            &copy; Copyright 2023.<br/>
-      </p>
-    </div>
-  </footer>
-</main>
-
-
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="02_intermediate_python.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Part II: Matplotlib</p>
       </div>
+    </a>
+    <a class="right-next"
+       href="03_intermediate_exercises.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Exercises: Part III</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#load-the-data">1. Load the Data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preliminary-data-exploration">2. Preliminary Data Exploration</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#masked-arrays">2.1 Masked Arrays</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#plotting-the-data">3. Plotting the Data</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-plotting-options">3.1 More Plotting Options</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-statistical-analysis">4. Simple Statistical Analysis</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Karen Smith
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
 
-    
-  <script src="../../_static/js/index.3da636dd464baa7582d2.js"></script>
-
-
-    
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
