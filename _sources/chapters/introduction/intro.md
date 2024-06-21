@@ -10,7 +10,7 @@ Introduction
 This short course introduces students to Python programming, and simple analysis and data visualization techniques. The workshop is geared toward those with little or no prior experience with programming. Interactive exercises will be included in the workshop, giving students the opportunity to test their knowledge and employ the discussed techniques.
 
 ## Format
-The short course is presented via two asynchronous, interactive online modules and a 2-hour in-person session. Laptops and an internet connection are required.
+The short course is presented via two asynchronous, interactive online modules. Laptops and an internet connection are required.
 
 In the first module, the focus will be on introductory programming concepts, and Python-specific syntax and usage. The second module will focus on simple data analysis and visualization, specifically using the Python packages [numpy][numpy] and [matplotlib][plt].
 
