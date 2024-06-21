@@ -1,2 +1,2 @@
 # ctl-python-workshop
-Graduate Professional Skills Python Workshop at the University of Toronto
+Short Course for the Master of Environmental Science Program at the University of Toronto Scarborough
